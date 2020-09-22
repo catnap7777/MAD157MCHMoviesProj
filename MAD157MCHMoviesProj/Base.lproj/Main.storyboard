@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vte-ce-Wqs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,7 +7,153 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--SearchVC-->
+        <!--My Movies-->
+        <scene sceneID="WWY-tR-8Dw">
+            <objects>
+                <viewController id="psB-bC-22Y" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FVG-Sh-AHy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.92249954689507074" green="1" blue="0.90573315234745544" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="5Ce-wQ-MJg"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="My Movies" image="list.dash" catalog="system" id="qJx-vg-dcE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fze-r1-TRB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="562" y="-192"/>
+        </scene>
+        <!--HomeVC-->
+        <scene sceneID="Cv1-ww-7Lp">
+            <objects>
+                <viewController id="PbM-Bo-YOd" customClass="HomeVC" customModule="MAD157MCHMoviesProj" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dsJ-52-fWj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="91" translatesAutoresizingMaskIntoConstraints="NO" id="MSa-1C-e6E">
+                                <rect key="frame" x="36" y="132" width="342" height="581"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X59-H5-ROo">
+                                        <rect key="frame" x="0.0" y="0.0" width="342" height="39"/>
+                                        <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="39" id="BWo-38-6bS"/>
+                                            <constraint firstAttribute="height" constant="39" id="HhP-N5-vrM"/>
+                                            <constraint firstAttribute="width" constant="342" id="rLr-hw-cbe"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="MCH Movies">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="0.0069375394172468408" blue="0.081287042612919636" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <font key="NSFont" size="24" name="Noteworthy-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popcornpic1sm2.png" translatesAutoresizingMaskIntoConstraints="NO" id="8SS-Xp-KdO">
+                                        <rect key="frame" x="16" y="130" width="310" height="190"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="310" id="QA1-7Y-RvO"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="310" id="RRI-Wg-gsF"/>
+                                            <constraint firstAttribute="height" constant="190" id="a88-uk-K5Y"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="190" id="oAY-PF-6j4"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your main source for movie fun!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlb-uo-cy6">
+                                        <rect key="frame" x="23" y="411" width="296.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycO-Qx-xsX">
+                                        <rect key="frame" x="75" y="526" width="192" height="55"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="192" id="Vd2-cS-cYF"/>
+                                            <constraint firstAttribute="height" constant="55" id="bWT-Hb-F87"/>
+                                        </constraints>
+                                        <state key="normal" title="Enter if you dare :)"/>
+                                        <connections>
+                                            <action selector="enterButtonPressed:" destination="PbM-Bo-YOd" eventType="touchUpInside" id="W8Y-yF-Zg3"/>
+                                            <segue destination="hg1-5v-Nfs" kind="show" identifier="mainSegue" id="d1V-FB-oRT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="MSa-1C-e6E" firstAttribute="leading" secondItem="kbP-SN-eoA" secondAttribute="leading" constant="36" id="UDX-mb-NnJ"/>
+                            <constraint firstItem="MSa-1C-e6E" firstAttribute="top" secondItem="kbP-SN-eoA" secondAttribute="top" constant="44" id="bBj-oP-h1f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kbP-SN-eoA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vSg-gl-e8c"/>
+                    <connections>
+                        <outlet property="enterButtonObj" destination="ycO-Qx-xsX" id="0IO-8Z-djf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iov-n2-qrY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1114.4927536231885" y="-977.00892857142856"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="WPv-rv-L1s">
+            <objects>
+                <viewController id="yOX-Qd-Rl6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zZH-y8-qew">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.8804865236455951" green="0.92722022338914478" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="u2L-ed-5Sm"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart" catalog="system" id="D7y-Pm-ipU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ckT-Bi-isf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1449" y="-192"/>
+        </scene>
+        <!--IMDB-->
+        <scene sceneID="PaA-tn-5fl">
+            <objects>
+                <viewController id="aF4-1m-Q0D" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bCv-te-NGF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.88382846480134347" blue="0.95985379889731415" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="YEy-DB-QVU"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="IMDB" image="arrowshape.turn.up.right.fill" catalog="system" id="npz-xB-RJm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zMQ-Gl-UW9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2319" y="-192"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="KBD-R3-S3r">
+            <objects>
+                <tabBarController id="hg1-5v-Nfs" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Uwh-ux-E1G"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FSS-AF-tSq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="47r-a5-Phf"/>
+                        <segue destination="psB-bC-22Y" kind="relationship" relationship="viewControllers" id="tnR-ns-r3g"/>
+                        <segue destination="yOX-Qd-Rl6" kind="relationship" relationship="viewControllers" id="zFs-Cq-tKb"/>
+                        <segue destination="aF4-1m-Q0D" kind="relationship" relationship="viewControllers" id="sZA-Mb-eZC"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="akx-dT-jf0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-246" y="-977"/>
+        </scene>
+        <!--Search-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SearchVC" customModule="MAD157MCHMoviesProj" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,7 +162,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="88" translatesAutoresizingMaskIntoConstraints="NO" id="69f-rb-NQm">
-                                <rect key="frame" x="36" y="97" width="342" height="562"/>
+                                <rect key="frame" x="36" y="141" width="342" height="562"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVh-dr-J0Q">
                                         <rect key="frame" x="0.0" y="0.0" width="342" height="39"/>
@@ -67,15 +213,17 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" red="0.93711544689119175" green="0.91773601484403988" blue="0.589282778695842" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="1" green="0.9341523679650956" blue="0.87087865733849623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="69f-rb-NQm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="53" id="PJC-Rs-pT1"/>
                             <constraint firstItem="69f-rb-NQm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="qGp-LJ-cjS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="iwZ-ta-rcr"/>
                     <connections>
                         <outlet property="searchButton" destination="lEf-5p-MqD" id="U9h-NT-ajw"/>
                         <outlet property="searchTextField" destination="SpW-mf-mmc" id="x4i-MS-Hnh"/>
@@ -83,10 +231,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
+            <point key="canvasLocation" x="-246" y="-191"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8qp-pV-G1W">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vte-ce-Wqs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wBu-GG-pgX">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PbM-Bo-YOd" kind="relationship" relationship="rootViewController" id="vrz-uH-mRv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DDI-IS-XDl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2024.6376811594205" y="-977.00892857142856"/>
         </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="106"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="popcornpic1sm2.png" width="232.5" height="151.5"/>
     </resources>
 </document>
