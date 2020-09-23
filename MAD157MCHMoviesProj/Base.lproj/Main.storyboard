@@ -291,48 +291,55 @@
                                     <constraint firstAttribute="height" constant="631" id="add-Yl-rML"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" rowHeight="176" id="ks5-rv-yU8" customClass="TableViewCell" customModule="MAD157MCHMoviesProj" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="176"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" rowHeight="141" id="ks5-rv-yU8" customClass="TableViewCell" customModule="MAD157MCHMoviesProj" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="141"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ks5-rv-yU8" id="5pC-cB-isx">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="176"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="141"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ddN-i5-2kh">
-                                                    <rect key="frame" x="0.0" y="6" width="87" height="92"/>
+                                                    <rect key="frame" x="0.0" y="6" width="54" height="57"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="ddN-i5-2kh" secondAttribute="height" multiplier="87:92" id="XFU-oO-jGk"/>
                                                         <constraint firstAttribute="width" constant="87" id="c9i-Vg-6dK"/>
                                                         <constraint firstAttribute="height" constant="92" id="zY0-aD-Tgu"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYg-ND-1ob">
-                                                    <rect key="frame" x="150" y="11" width="216" height="68"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="XKz-ou-QBt">
+                                                    <rect key="frame" x="132" y="8" width="216" height="111"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYg-ND-1ob">
+                                                            <rect key="frame" x="0.0" y="0.0" width="216" height="68"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="216" id="7Db-Rt-3zA"/>
+                                                                <constraint firstAttribute="height" constant="68" id="g09-k8-crh"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtX-bd-75F">
+                                                            <rect key="frame" x="0.0" y="68" width="216" height="43"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="43" id="2ax-AI-peg"/>
+                                                                <constraint firstAttribute="width" constant="216" id="jEY-OY-Ggb"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="216" id="7Db-Rt-3zA"/>
-                                                        <constraint firstAttribute="height" constant="68" id="g09-k8-crh"/>
+                                                        <constraint firstAttribute="height" constant="111" id="5GU-M2-TK4"/>
+                                                        <constraint firstAttribute="width" constant="216" id="rko-Bw-IbC"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtX-bd-75F">
-                                                    <rect key="frame" x="150" y="110" width="216" height="43"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="43" id="2ax-AI-peg"/>
-                                                        <constraint firstAttribute="width" constant="216" id="jEY-OY-Ggb"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="xtX-bd-75F" firstAttribute="leading" secondItem="5pC-cB-isx" secondAttribute="leading" constant="150" id="5eL-Jl-2bn"/>
-                                                <constraint firstItem="xtX-bd-75F" firstAttribute="top" secondItem="CYg-ND-1ob" secondAttribute="bottom" constant="31" id="EqN-Jh-DuP"/>
+                                                <constraint firstItem="XKz-ou-QBt" firstAttribute="top" secondItem="5pC-cB-isx" secondAttribute="top" constant="8" id="6uz-hR-jAW"/>
+                                                <constraint firstItem="XKz-ou-QBt" firstAttribute="leading" secondItem="ddN-i5-2kh" secondAttribute="trailing" constant="78" id="EPW-6F-Mfa"/>
                                                 <constraint firstItem="ddN-i5-2kh" firstAttribute="top" secondItem="5pC-cB-isx" secondAttribute="top" constant="6" id="J5s-40-fMp"/>
-                                                <constraint firstItem="CYg-ND-1ob" firstAttribute="leading" secondItem="ddN-i5-2kh" secondAttribute="trailing" constant="63" id="JVm-5Y-RH5"/>
-                                                <constraint firstItem="CYg-ND-1ob" firstAttribute="top" secondItem="5pC-cB-isx" secondAttribute="top" constant="11" id="QrA-TU-gCC"/>
                                                 <constraint firstAttribute="bottom" secondItem="ddN-i5-2kh" secondAttribute="bottom" constant="78" id="T4W-bM-Wqo"/>
                                                 <constraint firstItem="ddN-i5-2kh" firstAttribute="leading" secondItem="5pC-cB-isx" secondAttribute="leading" id="afz-fM-20Z"/>
                                             </constraints>
