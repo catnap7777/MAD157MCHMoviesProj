@@ -75,7 +75,7 @@ class SearchVC: UIViewController {
 
             var vc = segue.destination as! MovieListVC
             
-//            vc.finalName = self.searchText
+            vc.finalName = self.searchText
             //vc.movieList = self.movieArray7
     //        print("movieArray7 going out: \(movieArray7)")
     //        vc.kamSetArray(movieArray: movieArray7)
@@ -84,12 +84,13 @@ class SearchVC: UIViewController {
             
             print("!@##$^!%#^!#%^!#% --- movieDictionary going out... count = \(movieDictionary7.count) :\n \(movieDictionary7)")
             
+        //**********
             for (k2,v2) in sortedMovieDictionary7 {
                 print("\n key/value pair in movieDictionary7 ::: \(k2) --> \(v2.mYear)")
             }
             
-            //vc.kamSetDictionary(movieDictionary: movieDictionary7)
-//            vc.kamSetDictionary(movieDictionary: sortedMovieDictionary7)
+            vc.kamSetDictionary(movieDictionary: movieDictionary7)
+            //vc.kamSetDictionary(movieDictionary: sortedMovieDictionary7)
             
     //        print("sortedMovieDictionary going out... count = \(sortedMovieDictionary7.count) :\n \(sortedMovieDictionary7)")
     //        vc.kamSetDictionary(movieDictionary: sortedMovieDictionary7)
@@ -101,15 +102,15 @@ class SearchVC: UIViewController {
         
         print("hi kar. button pressed.")
         
-        searchButton.setTitle("searchButton Clicked", for: UIControl.State.normal)
-        searchButton.backgroundColor = UIColor.gray
-        searchButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
+//        searchButton.setTitle("searchButton Clicked", for: UIControl.State.normal)
+//        searchButton.backgroundColor = UIColor.gray
+//        searchButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
                 
         self.searchText = searchTextField.text ?? ""
                 
         //        print("****** this is what you have in the text box when searchButton is clicked: \(searchText)")
         //
-                var p = queryJSON(query: searchText )
+        var p = queryJSON(query: searchText )
                 
         //        print("\nvariable p = \(p)")
         //        print("\nhi karen... searchButton was clicked")
