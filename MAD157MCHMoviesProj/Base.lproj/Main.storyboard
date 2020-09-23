@@ -210,6 +210,7 @@
                                         <state key="normal" title="Search"/>
                                         <connections>
                                             <action selector="searchMovieButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oAt-aU-vQC"/>
+                                            <segue destination="rsX-ge-e0F" kind="show" identifier="moviesSegue" id="EMu-4O-r75"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -232,6 +233,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-246" y="-191"/>
+        </scene>
+        <!--Movie ListVC-->
+        <scene sceneID="Cqt-wV-nOi">
+            <objects>
+                <viewController id="rsX-ge-e0F" customClass="MovieListVC" customModule="MAD157MCHMoviesProj" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lYw-JA-KLD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="7OY-mQ-8Wo"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="c0w-Oy-Lf8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ssU-88-4ui" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-244" y="611"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8qp-pV-G1W">
