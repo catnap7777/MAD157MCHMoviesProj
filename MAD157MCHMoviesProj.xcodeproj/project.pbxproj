@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A766D3D251BB0D100B299C4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A766D3C251BB0D100B299C4 /* TableViewCell.swift */; };
+		3A84553F251BCD400040877A /* OpenImdbVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A84553E251BCD400040877A /* OpenImdbVCViewController.swift */; };
 		3AA0CEEC251AA50800239261 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0CEEB251AA50800239261 /* AppDelegate.swift */; };
 		3AA0CEEE251AA50800239261 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0CEED251AA50800239261 /* SceneDelegate.swift */; };
 		3AA0CEF3251AA50800239261 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA0CEF1251AA50800239261 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		3A766D3C251BB0D100B299C4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		3A84553E251BCD400040877A /* OpenImdbVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenImdbVCViewController.swift; sourceTree = "<group>"; };
 		3AA0CEE8251AA50800239261 /* MAD157MCHMoviesProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAD157MCHMoviesProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AA0CEEB251AA50800239261 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AA0CEED251AA50800239261 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,7 +81,9 @@
 				3AA0CF03251AB50100239261 /* HomeVC.swift */,
 				3AA0CF01251AA8EA00239261 /* SearchVC.swift */,
 				3AA0CF05251ADDEE00239261 /* MovieListVC.swift */,
+				3A766D3C251BB0D100B299C4 /* TableViewCell.swift */,
 				3AA0CF11251AEBC900239261 /* MovieDetailVC.swift */,
+				3A84553E251BCD400040877A /* OpenImdbVCViewController.swift */,
 				3AA0CEF1251AA50800239261 /* Main.storyboard */,
 				3AA0CEF4251AA50A00239261 /* Assets.xcassets */,
 				3AA0CF15251BA83B00239261 /* hp.png */,
@@ -89,7 +93,6 @@
 				3AA0CF1B251BAB2300239261 /* gitcat.jpg */,
 				3AA0CEF6251AA50A00239261 /* LaunchScreen.storyboard */,
 				3AA0CEF9251AA50A00239261 /* Info.plist */,
-				3A766D3C251BB0D100B299C4 /* TableViewCell.swift */,
 			);
 			path = MAD157MCHMoviesProj;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				3AA0CF12251AEBC900239261 /* MovieDetailVC.swift in Sources */,
 				3A766D3D251BB0D100B299C4 /* TableViewCell.swift in Sources */,
 				3AA0CEEE251AA50800239261 /* SceneDelegate.swift in Sources */,
+				3A84553F251BCD400040877A /* OpenImdbVCViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

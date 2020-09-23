@@ -48,7 +48,9 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         movieTable.dataSource = self
         movieTable.delegate = self
         
+        finalName = finalName.uppercased()
         labelName.text = "\"" + finalName + "\"" + " Movies"
+        
         
         //.. from https://www.raywenderlich.com/8549-self-sizing-table-view-cells
 //        movieTable.rowHeight = UITableView.automaticDimension
@@ -128,6 +130,8 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         //.. NOTE:  Per "bug" where MovieDetailVC2 VC apparently loads twice per stackoverflow
         //..   https://stackoverflow.com/questions/1081131/viewdidload-getting-called-twice-on-rootviewcontroller-at-launch
         //.. 2020 - see this for solution and why it's happening!!!!!!!
+        //.. https://stackoverflow.com/questions/32300300/view-controller-loads-twice-how-do-i-fix-it#:~:text=Here's%20the%20simplest%20solution%20ever,and%20you%20should%20be%20okay.
+    
         //..   post about viewDidLoad from segue call from MovieListViewController, I had
         //..   to rename MovieDetailVC to MovieDetailVC2 and redo the segue
         //..   to stop this from loading two times (first time had nil for movie title)
@@ -182,11 +186,11 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             //vc.setMovieDetail(fTitle: key2)
             var vc = segue.destination as! MovieDetailVC
             
-//            vc.movieTitle = key2
-//            vc.movieYear = value2.mYear
-//            vc.movieType = value2.mType
-//            vc.movieIMDB = value2.mIMDB
-//            vc.moviePoster = value2.mPoster
+            vc.movieTitle = key2
+            vc.movieYear = value2.mYear
+            vc.movieType = value2.mType
+            vc.movieIMDB = value2.mIMDB
+            vc.moviePoster = value2.mPoster
             
         }
 
