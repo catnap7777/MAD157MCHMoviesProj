@@ -49,6 +49,10 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         movieTable.delegate = self
         
         labelName.text = "\"" + finalName + "\"" + " Movies"
+        
+        //.. from https://www.raywenderlich.com/8549-self-sizing-table-view-cells
+//        movieTable.rowHeight = UITableView.automaticDimension
+//        movieTable.estimatedRowHeight = 900
             
     }
     
