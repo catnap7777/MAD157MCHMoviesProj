@@ -31,8 +31,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="91" translatesAutoresizingMaskIntoConstraints="NO" id="MSa-1C-e6E">
-                                <rect key="frame" x="36" y="132" width="342" height="581"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="CRx-Z8-1Ke">
+                                <rect key="frame" x="36" y="142" width="342" height="588"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X59-H5-ROo">
                                         <rect key="frame" x="0.0" y="0.0" width="342" height="39"/>
@@ -54,7 +54,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popcornpic1sm2.png" translatesAutoresizingMaskIntoConstraints="NO" id="8SS-Xp-KdO">
-                                        <rect key="frame" x="16" y="130" width="310" height="190"/>
+                                        <rect key="frame" x="16" y="85" width="310" height="190"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="310" id="QA1-7Y-RvO"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="310" id="RRI-Wg-gsF"/>
@@ -63,13 +63,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your main source for movie fun!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlb-uo-cy6">
-                                        <rect key="frame" x="23" y="411" width="296.5" height="24"/>
+                                        <rect key="frame" x="23" y="321" width="296.5" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycO-Qx-xsX">
-                                        <rect key="frame" x="75" y="526" width="192" height="55"/>
+                                        <rect key="frame" x="75" y="391" width="192" height="55"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="192" id="Vd2-cS-cYF"/>
@@ -81,13 +81,21 @@
                                             <segue destination="hg1-5v-Nfs" kind="show" identifier="mainSegue" id="d1V-FB-oRT"/>
                                         </connections>
                                     </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tygermatrix303.png" translatesAutoresizingMaskIntoConstraints="NO" id="tPK-at-q3c">
+                                        <rect key="frame" x="124.5" y="492" width="93" height="96"/>
+                                    </imageView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="342" id="D5g-j3-PkJ"/>
+                                    <constraint firstAttribute="height" constant="588" id="Dtd-T7-6hK"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="MSa-1C-e6E" firstAttribute="leading" secondItem="kbP-SN-eoA" secondAttribute="leading" constant="36" id="UDX-mb-NnJ"/>
-                            <constraint firstItem="MSa-1C-e6E" firstAttribute="top" secondItem="kbP-SN-eoA" secondAttribute="top" constant="44" id="bBj-oP-h1f"/>
+                            <constraint firstItem="kbP-SN-eoA" firstAttribute="trailing" secondItem="CRx-Z8-1Ke" secondAttribute="trailing" constant="36" id="T1n-pi-bgj"/>
+                            <constraint firstItem="CRx-Z8-1Ke" firstAttribute="leading" secondItem="kbP-SN-eoA" secondAttribute="leading" constant="36" id="YBU-qT-4gI"/>
+                            <constraint firstItem="CRx-Z8-1Ke" firstAttribute="top" secondItem="kbP-SN-eoA" secondAttribute="top" constant="54" id="cbf-pm-hvq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kbP-SN-eoA"/>
                     </view>
@@ -131,7 +139,7 @@
                                     <constraint firstAttribute="width" constant="178" id="R6N-Be-e0A"/>
                                     <constraint firstAttribute="height" constant="45" id="cqV-OG-Djs"/>
                                 </constraints>
-                                <state key="normal" title="Go to IMDB"/>
+                                <state key="normal" title="Go back to IMDB"/>
                                 <connections>
                                     <action selector="ImdbButtonPressed:" destination="aF4-1m-Q0D" eventType="touchUpInside" id="E58-48-vuu"/>
                                 </connections>
@@ -551,5 +559,6 @@
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="popcornpic1sm2.png" width="232.5" height="151.5"/>
+        <image name="tygermatrix303.png" width="69.75" height="72"/>
     </resources>
 </document>

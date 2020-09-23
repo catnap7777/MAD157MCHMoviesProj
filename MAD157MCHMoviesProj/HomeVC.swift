@@ -15,6 +15,12 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "popcorn2_wo_middle3.jpg")
+        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+        //backgroundImage.contentMode = UIView.ContentMode.scaleToFill
+        self.view.insertSubview(backgroundImage, at: 0)
+        
         // Do any additional setup after loading the view.
     }
     
