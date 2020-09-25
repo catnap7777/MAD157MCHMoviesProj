@@ -458,11 +458,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgZ-cb-gJM">
-                                <rect key="frame" x="144" y="711" width="126" height="32"/>
+                                <rect key="frame" x="59" y="723" width="137" height="32"/>
                                 <color key="backgroundColor" red="0.975688373" green="0.73323755859999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="126" id="7W2-cg-lrX"/>
-                                    <constraint firstAttribute="height" constant="32" id="BCf-0H-Qml"/>
+                                    <constraint firstAttribute="height" constant="32" id="2tK-Aa-5Gl"/>
+                                    <constraint firstAttribute="width" constant="137" id="XXf-mF-28d"/>
                                 </constraints>
                                 <state key="normal" title="View IMDB Info">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -488,6 +488,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jGs-fp-FSG">
+                                <rect key="frame" x="222" y="723" width="139" height="32"/>
+                                <color key="backgroundColor" red="0.975688373" green="0.73323755859999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="1w3-Nw-fbO"/>
+                                    <constraint firstAttribute="width" constant="139" id="ZUD-6H-zTr"/>
+                                </constraints>
+                                <state key="normal" title="Save to My Movies">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveMyMovieButtonPressed:" destination="DuK-iK-5E8" eventType="touchUpInside" id="1d7-m0-mhR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.71068646968225835" green="0.92324417616583343" blue="0.96130555868148804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -501,7 +515,7 @@
                             <constraint firstItem="Z0C-r6-L8C" firstAttribute="centerY" secondItem="XXZ-cH-dHR" secondAttribute="centerY" constant="-3" id="Bay-Pf-osI"/>
                             <constraint firstItem="qMH-2G-ED4" firstAttribute="leading" secondItem="13l-mB-nOu" secondAttribute="leading" id="Iyb-24-fiu"/>
                             <constraint firstItem="13l-mB-nOu" firstAttribute="leading" secondItem="0fo-Et-68U" secondAttribute="trailing" constant="8" id="KNm-pn-QYt"/>
-                            <constraint firstItem="UgZ-cb-gJM" firstAttribute="leading" secondItem="mgJ-Xk-7oD" secondAttribute="leading" constant="144" id="NkD-3x-eEJ"/>
+                            <constraint firstItem="jGs-fp-FSG" firstAttribute="top" secondItem="zjE-vH-NUN" secondAttribute="bottom" constant="40" id="Mfr-6b-lmf"/>
                             <constraint firstItem="XXZ-cH-dHR" firstAttribute="top" secondItem="qMH-2G-ED4" secondAttribute="bottom" constant="27" id="NnJ-rx-yuO"/>
                             <constraint firstItem="lwy-KL-dyu" firstAttribute="top" secondItem="qMH-2G-ED4" secondAttribute="top" id="PY5-Xs-FiN"/>
                             <constraint firstItem="Z0C-r6-L8C" firstAttribute="leading" secondItem="mgJ-Xk-7oD" secondAttribute="leading" constant="48" id="QBf-cO-ssb"/>
@@ -510,16 +524,18 @@
                             <constraint firstItem="qMH-2G-ED4" firstAttribute="leading" secondItem="lwy-KL-dyu" secondAttribute="trailing" constant="7" id="UnZ-Q9-39U"/>
                             <constraint firstItem="13l-mB-nOu" firstAttribute="top" secondItem="cay-uQ-i6H" secondAttribute="bottom" constant="61" id="VPw-of-5un"/>
                             <constraint firstItem="H5g-iE-YEn" firstAttribute="top" secondItem="mgJ-Xk-7oD" secondAttribute="top" constant="47" id="Wme-v7-9cX"/>
+                            <constraint firstItem="UgZ-cb-gJM" firstAttribute="top" secondItem="zjE-vH-NUN" secondAttribute="bottom" constant="40" id="XEi-0h-Ih0"/>
                             <constraint firstItem="H5g-iE-YEn" firstAttribute="leading" secondItem="mgJ-Xk-7oD" secondAttribute="leading" constant="45" id="XhO-gu-J3L"/>
                             <constraint firstItem="zjE-vH-NUN" firstAttribute="top" secondItem="Z0C-r6-L8C" secondAttribute="bottom" constant="52" id="YlU-VJ-Aah"/>
                             <constraint firstItem="0fo-Et-68U" firstAttribute="top" secondItem="13l-mB-nOu" secondAttribute="top" id="aOU-uU-LNF"/>
+                            <constraint firstItem="UgZ-cb-gJM" firstAttribute="leading" secondItem="mgJ-Xk-7oD" secondAttribute="leading" constant="59" id="aT1-cA-6wn"/>
                             <constraint firstItem="13l-mB-nOu" firstAttribute="leading" secondItem="0fo-Et-68U" secondAttribute="trailing" constant="8" symbolic="YES" id="buM-MO-ZRm"/>
                             <constraint firstItem="0fo-Et-68U" firstAttribute="leading" secondItem="mgJ-Xk-7oD" secondAttribute="leading" constant="45" id="bzr-ut-TQU"/>
                             <constraint firstItem="0fo-Et-68U" firstAttribute="baseline" secondItem="13l-mB-nOu" secondAttribute="firstBaseline" id="fj8-Hx-ItW"/>
-                            <constraint firstItem="UgZ-cb-gJM" firstAttribute="top" secondItem="zjE-vH-NUN" secondAttribute="bottom" constant="28" id="foj-2M-rho"/>
                             <constraint firstItem="cay-uQ-i6H" firstAttribute="leading" secondItem="mgJ-Xk-7oD" secondAttribute="leading" constant="45" id="gUn-RX-sKG"/>
                             <constraint firstItem="XXZ-cH-dHR" firstAttribute="leading" secondItem="Z0C-r6-L8C" secondAttribute="trailing" constant="8" symbolic="YES" id="kf4-7N-rYx"/>
                             <constraint firstItem="lwy-KL-dyu" firstAttribute="leading" secondItem="mgJ-Xk-7oD" secondAttribute="leading" constant="46" id="moE-3e-lsA"/>
+                            <constraint firstItem="jGs-fp-FSG" firstAttribute="leading" secondItem="UgZ-cb-gJM" secondAttribute="trailing" constant="26" id="ns9-3A-8vd"/>
                             <constraint firstItem="0fo-Et-68U" firstAttribute="top" secondItem="lwy-KL-dyu" secondAttribute="bottom" constant="1" id="uVF-Ou-saY"/>
                             <constraint firstItem="cay-uQ-i6H" firstAttribute="top" secondItem="H5g-iE-YEn" secondAttribute="bottom" constant="8" id="uVc-SZ-Lwa"/>
                             <constraint firstItem="lwy-KL-dyu" firstAttribute="top" secondItem="cay-uQ-i6H" secondAttribute="bottom" constant="28" id="x5a-Sy-k5I"/>
@@ -539,7 +555,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P2X-YS-qR4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="694" y="611"/>
+            <point key="canvasLocation" x="692.75362318840587" y="610.71428571428567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8qp-pV-G1W">

@@ -27,10 +27,85 @@ class MovieDetailVC: UIViewController {
     
     let defaultImageArray = ["posternf.png"]
     
+//    let dictionary = ["key1" : "value1", "key2":"value2", "key3":"value3"]
+//    var movieDictionary: [String : (movieTitle: String, movieYear: String, movieType: String, moviePoster: String)] = [:]
+//    var movieDictionary: [String : (movieYear: String, movieType: String)] = [:]
+    var movieDictionary: [String : String] = [:]
+    
+    
+    
+    let myPlist = PlistStuff()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //.. create plist if it doesn't already exist
+        //..
+        //.. can't use CFType (tuple)
+//        movieDictionary = ["movie1" : (movieYear: "2020", movieType: "movie")]
+//        movieDictionary = ["movie2" : (movieYear: "2020", movieType: "movie2")]
+        
+        movieDictionary = ["movie1" : "2020"]
+        
+//        //.. create plist if it doesn't exist already
+//        do {
+//            var dictionaryInit = try myPlist.savePropertyList(movieDictionary)
+//                    //var dictionary2 = try myPlist.loadPropertyList()
+//                    //***movieDictionary = try myPlist.loadPropertyList()
+//                    //***print("movieDictionary before update (loaded): \(movieDictionary)")
+//        //            dictionary2.updateValue("xxxxxxvalue4", forKey: "key3")
+//        //            dictionary2.updateValue("2033", forKey: "movie2")
+//        //            dictionary2.updateValue("year4", forKey: "movie4")
+//        //            dictionary2.updateValue("year5", forKey: "movie5")
+//                    //dictionary2.updateValue(movieType, forKey: movieTitle)
+//                    //***movieDictionary[movieTitle] = movieType
+//                    //***print("movieDictionary after new movie added \(movieDictionary)")
+//        //            dictionary2.removeAll()
+//
+//            //try myPlist.savePropertyList(dictionaryInit)
+//                    //***try myPlist.savePropertyList(movieDictionary)
+//                    //***print("movieDictionary after save - \(movieDictionary)")
+//                } catch {
+//                    print(error)
+//                    print("nope... did NOT update plist... why not?")
+//                }
+        
+        print("movieDictionary = \(movieDictionary)")
+        
+        do {
+                    var dictionaryload = try myPlist.loadPropertyList()
+                    //..remove bogus initial keey
+           //*******         dictionaryload.removeValue(forKey: "movie1")
+            
+                    //dictionary2.updateValue("aaaaaaaa", forKey: "key3")
+                    //dictionary2.removeValue(forKey: "key2")
+                    //dictionary2.removeAll()
+            
+//                    //.. remove bogus key
+//                    dictionaryload.removeValue(forKey: "movie1")
+            
+                    //.. to clean out dictionary
+                    //..dictionaryload.removeAll()
+        
+                    print("dictionaryloaded is now... \(dictionaryload)")
+        
+                    //.. to save clean dictionary
+                    //..try myPlist.savePropertyList(dictionaryload)
+                } catch {
+                    print(error)
+                    print("plist did not load")
+                }
+        
+//        do {
+//            //let dictionary = ["key1" : "value1", "key2":"value2", "key3":"value3"]
+//            //try myPlist.savePropertyList(dictionary)
+//            try myPlist.savePropertyList(movieDictionary)
+//        } catch {
+//            print(error)
+//            print("maybe plist already exists?")
+//        }
         
         print("in movie detail view controller" )
                 // Do any additional setup after loading the view.
@@ -66,6 +141,59 @@ class MovieDetailVC: UIViewController {
             UIApplication.shared.open(url, options: [:])
         }
     }
+    
+    @IBAction func saveMyMovieButtonPressed(_ sender: Any) {
+        
+//        do {
+//            let dictionary = ["key1" : "value1", "key2":"value2", "key3":"value3"]
+//            try myPlist.savePropertyList(dictionary)
+//        } catch {
+//            print(error)
+//        }
+        
+        print("aren't you going to do the other part???")
+        //updatePlist()
+        
+        do {
+            var dictionary2 = try myPlist.loadPropertyList()
+            //***movieDictionary = try myPlist.loadPropertyList()
+            //***print("movieDictionary before update (loaded): \(movieDictionary)")
+//            dictionary2.updateValue("xxxxxxvalue4", forKey: "key3")
+//            dictionary2.updateValue("2033", forKey: "movie2")
+//            dictionary2.updateValue("year4", forKey: "movie4")
+//            dictionary2.updateValue("year5", forKey: "movie5")
+            
+            //.. remove bogus key
+            dictionary2.removeValue(forKey: "movie1")
+            dictionary2.updateValue(movieType, forKey: movieTitle)
+            //***movieDictionary[movieTitle] = movieType
+            //***print("movieDictionary after new movie added \(movieDictionary)")
+//            dictionary2.removeAll()
+            try myPlist.savePropertyList(dictionary2)
+            //***try myPlist.savePropertyList(movieDictionary)
+            //***print("movieDictionary after save - \(movieDictionary)")
+        } catch {
+            print(error)
+            print("nope... did NOT update plist... why not?")
+        }
+    }
+    
+//    func updatePlist() {
+//        do {
+//            var dictionary2 = try myPlist.loadPropertyList()
+//            //dictionary2.updateValue("aaaaaaaa", forKey: "key3")
+//            //dictionary2.removeValue(forKey: "key2")
+//            //dictionary2.removeAll()
+//
+//            print("dictionary2 is now... \(dictionary2)")
+//
+//
+//            try myPlist.savePropertyList(dictionary2)
+//        } catch {
+//            print(error)
+//            print("what the hell is going on?")
+//        }
+//    }
     
     func setMovieDetail(fTitle: String) {
 
