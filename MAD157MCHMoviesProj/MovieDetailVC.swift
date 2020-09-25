@@ -100,13 +100,22 @@ class MovieDetailVC: UIViewController {
             //.. remove bogus key that was initially added if new plist created in viewDidLoad
             dictionary2.removeValue(forKey: "movie1")
             //.. add the new movie
-            dictionary2.updateValue(movieType, forKey: movieTitle)
+            dictionary2.updateValue(movieYear, forKey: movieTitle)
             //.. save the plist
             try myPlist.savePropertyList(dictionary2)
+            //.. if it saved, show an alert
+            let alert = UIAlertController(title: "Message", message: "Movie Saved to My Movies :)", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: { action -> Void in
+                //Just dismiss the action sheet
+                })
+            alert.addAction(okAction)
+            self .present(alert, animated: true, completion: nil )
+            
             } catch {
                 print(error)
                 print("nope... did NOT save/update plist with 'new' movie... why not?")
-        }
+            }
+//        }
     }
     
     func setMovieDetail(fTitle: String) {
