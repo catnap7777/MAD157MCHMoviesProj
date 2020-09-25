@@ -13,40 +13,36 @@ class PlistStuff {
     
     var plistURL : URL {
         let documentDirectoryURL =  try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-        return documentDirectoryURL.appendingPathComponent("dictionarykaren1.plist")
+        return documentDirectoryURL.appendingPathComponent("dictionaryKam1.plist")
+        //.. this "file" (above) gets hidden in a really long complicated directory -  I used the error msg, terminal, and Atom to find directory/file and to open file to see .xml with movie "records"
+        //.. Example of directory where plist is stored (not always the same) =
+        //..   /Users/kam/Library/Developer/CoreSimulator/Devices/546DFFAC-C0F5-4FC6-9702-5D72DF9B8133/data/Containers/Data/Application/3AFC5C2A-7302-4734-A9AE-2DB6F32781F8/Documents/dictionaryKam1.plist
     }
 
     
     func savePropertyList(_ plist: Any) throws
     {
-        print("in savePropertyList - plist = \(plist)")
+        print("..in savePropertyList - plist = \(plist)")
         let plistData = try PropertyListSerialization.data(fromPropertyList: plist, format: .xml, options: 0)
-        print("plistData = \(plistData)")
+        print("..plistData = \(plistData)")
         
         do {
             try plistData.write(to: plistURL)
             } catch {
-                print("yup, didn't save it")
+                print("..plist write FAILED..")
             }
     }
-//        do {
-//            try typeTextHere.text.write(to: url!, atomically: true, encoding: String.Encoding.utf8)
-//        } catch {
-//            print("Error writing file")
-//        }
-//    }
-
 
     func loadPropertyList() throws -> [String:String]
     {
-        print("trying to load the stupid plist")
+        print(".. in loadPropertyList")
         let data = try Data(contentsOf: plistURL)
-        print("data from trying to load plist  == \(data)")
+        print("..data from plist = \(data)")
         guard let plist = try PropertyListSerialization.propertyList(from: data, format: nil) as? [String:String] else {
-            print("that didn't work")
+            print(".. plist load FAILED..")
             return [:]
         }
-        print("my plist has: \(plist)")
+        print("..movie plist currently has: \(plist)")
         return plist
     }
 

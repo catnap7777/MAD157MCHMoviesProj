@@ -14,8 +14,8 @@
             filePath = "MAD157MCHMoviesProj/MovieDetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "saveMyMovieButtonPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "MAD157MCHMoviesProj/MovieDetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "saveMyMovieButtonPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "MAD157MCHMoviesProj/MovieDetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "saveMyMovieButtonPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "MAD157MCHMoviesProj/MovieDetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "saveMyMovieButtonPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>

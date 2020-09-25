@@ -27,109 +27,53 @@ class MovieDetailVC: UIViewController {
     
     let defaultImageArray = ["posternf.png"]
     
-//    let dictionary = ["key1" : "value1", "key2":"value2", "key3":"value3"]
-//    var movieDictionary: [String : (movieTitle: String, movieYear: String, movieType: String, moviePoster: String)] = [:]
-//    var movieDictionary: [String : (movieYear: String, movieType: String)] = [:]
+    //.. NOTE: complex dictionary objects (objects with key:tuple - called CFType) cannot be saved in a plist
     var movieDictionary: [String : String] = [:]
     
-    
-    
+    //.. instantiate class
     let myPlist = PlistStuff()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         
-        //.. create plist if it doesn't already exist
-        //..
-        //.. can't use CFType (tuple)
-//        movieDictionary = ["movie1" : (movieYear: "2020", movieType: "movie")]
-//        movieDictionary = ["movie2" : (movieYear: "2020", movieType: "movie2")]
-        
         movieDictionary = ["movie1" : "2020"]
-        
-//        //.. create plist if it doesn't exist already
-//        do {
-//            var dictionaryInit = try myPlist.savePropertyList(movieDictionary)
-//                    //var dictionary2 = try myPlist.loadPropertyList()
-//                    //***movieDictionary = try myPlist.loadPropertyList()
-//                    //***print("movieDictionary before update (loaded): \(movieDictionary)")
-//        //            dictionary2.updateValue("xxxxxxvalue4", forKey: "key3")
-//        //            dictionary2.updateValue("2033", forKey: "movie2")
-//        //            dictionary2.updateValue("year4", forKey: "movie4")
-//        //            dictionary2.updateValue("year5", forKey: "movie5")
-//                    //dictionary2.updateValue(movieType, forKey: movieTitle)
-//                    //***movieDictionary[movieTitle] = movieType
-//                    //***print("movieDictionary after new movie added \(movieDictionary)")
-//        //            dictionary2.removeAll()
-//
-//            //try myPlist.savePropertyList(dictionaryInit)
-//                    //***try myPlist.savePropertyList(movieDictionary)
-//                    //***print("movieDictionary after save - \(movieDictionary)")
-//                } catch {
-//                    print(error)
-//                    print("nope... did NOT update plist... why not?")
-//                }
-        
-        print("movieDictionary = \(movieDictionary)")
-        
+    
+        //.. try to load existing plist... if it doesn't exist, "save"/create it
         do {
-                    var dictionaryload = try myPlist.loadPropertyList()
-                    //..remove bogus initial keey
-           //*******         dictionaryload.removeValue(forKey: "movie1")
-            
-                    //dictionary2.updateValue("aaaaaaaa", forKey: "key3")
-                    //dictionary2.removeValue(forKey: "key2")
-                    //dictionary2.removeAll()
-            
-//                    //.. remove bogus key
-//                    dictionaryload.removeValue(forKey: "movie1")
-            
-                    //.. to clean out dictionary
-                    //..dictionaryload.removeAll()
+            //.. try to load
+            var dictionaryload = try myPlist.loadPropertyList()
+            print("dictionaryloaded is now... \(dictionaryload)")
         
-                    print("dictionaryloaded is now... \(dictionaryload)")
-        
-                    //.. to save clean dictionary
-                    //..try myPlist.savePropertyList(dictionaryload)
-                } catch {
+            } catch {
+                    //.. if not loaded (ie. not found bc it's new), try to save a new one
+                    do {
+                        var dictionaryInitSave = try myPlist.savePropertyList(movieDictionary) }
+                        catch {
+                            print("..tried to save a 'new' plist but it didn't work")
+                    }
                     print(error)
-                    print("plist did not load")
+                    print(".. tried to load an existing plist but it didn't load or wasn't there")
                 }
         
-//        do {
-//            //let dictionary = ["key1" : "value1", "key2":"value2", "key3":"value3"]
-//            //try myPlist.savePropertyList(dictionary)
-//            try myPlist.savePropertyList(movieDictionary)
-//        } catch {
-//            print(error)
-//            print("maybe plist already exists?")
-//        }
-        
         print("in movie detail view controller" )
-                // Do any additional setup after loading the view.
-                
-                //testLabel.text = testString
-                movieTitleLabel.text = movieTitle
-                yearLabel.text = movieYear
-                typeLabel.text = movieType
-                imdbLabel.text = movieIMDB
-                //posterLabel.text = moviePoster
+        
+        
+        //testLabel.text = testString
+        movieTitleLabel.text = movieTitle
+        yearLabel.text = movieYear
+        typeLabel.text = movieType
+        imdbLabel.text = movieIMDB
+        //posterLabel.text = moviePoster
                 
         //        let url = URL(string: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/12/11/naturo-monkey-selfie.jpg?w968h681")
-                let url = moviePoster
-                self.detailImage.image = UIImage(named: defaultImageArray[0])
-                self.setImage(from: url)
-              //  self.imgView.downloadImage(from: url!)
-                
-            
-        //    //.. thought I needed this at first... I don't...
-        //    override func viewDidAppear(_ animated: Bool) {
-        //
-        //        print("oh boy... fun... not...")
-        //        testLabel.text = movieTitle
         
+        let url = moviePoster
+        self.detailImage.image = UIImage(named: defaultImageArray[0])
+        self.setImage(from: url)
+      //  self.imgView.downloadImage(from: url!)
+                
+       
     }
     
     
@@ -144,56 +88,26 @@ class MovieDetailVC: UIViewController {
     
     @IBAction func saveMyMovieButtonPressed(_ sender: Any) {
         
-//        do {
-//            let dictionary = ["key1" : "value1", "key2":"value2", "key3":"value3"]
-//            try myPlist.savePropertyList(dictionary)
-//        } catch {
-//            print(error)
-//        }
-        
-        print("aren't you going to do the other part???")
-        //updatePlist()
-        
         do {
             var dictionary2 = try myPlist.loadPropertyList()
-            //***movieDictionary = try myPlist.loadPropertyList()
-            //***print("movieDictionary before update (loaded): \(movieDictionary)")
+            
 //            dictionary2.updateValue("xxxxxxvalue4", forKey: "key3")
 //            dictionary2.updateValue("2033", forKey: "movie2")
 //            dictionary2.updateValue("year4", forKey: "movie4")
 //            dictionary2.updateValue("year5", forKey: "movie5")
-            
-            //.. remove bogus key
-            dictionary2.removeValue(forKey: "movie1")
-            dictionary2.updateValue(movieType, forKey: movieTitle)
-            //***movieDictionary[movieTitle] = movieType
-            //***print("movieDictionary after new movie added \(movieDictionary)")
 //            dictionary2.removeAll()
+            
+            //.. remove bogus key that was initially added if new plist created in viewDidLoad
+            dictionary2.removeValue(forKey: "movie1")
+            //.. add the new movie
+            dictionary2.updateValue(movieType, forKey: movieTitle)
+            //.. save the plist
             try myPlist.savePropertyList(dictionary2)
-            //***try myPlist.savePropertyList(movieDictionary)
-            //***print("movieDictionary after save - \(movieDictionary)")
-        } catch {
-            print(error)
-            print("nope... did NOT update plist... why not?")
+            } catch {
+                print(error)
+                print("nope... did NOT save/update plist with 'new' movie... why not?")
         }
     }
-    
-//    func updatePlist() {
-//        do {
-//            var dictionary2 = try myPlist.loadPropertyList()
-//            //dictionary2.updateValue("aaaaaaaa", forKey: "key3")
-//            //dictionary2.removeValue(forKey: "key2")
-//            //dictionary2.removeAll()
-//
-//            print("dictionary2 is now... \(dictionary2)")
-//
-//
-//            try myPlist.savePropertyList(dictionary2)
-//        } catch {
-//            print(error)
-//            print("what the hell is going on?")
-//        }
-//    }
     
     func setMovieDetail(fTitle: String) {
 
