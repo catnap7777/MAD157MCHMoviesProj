@@ -17,6 +17,7 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     let cellID = "cellID"
     
+    
     //.. instantiate class
     let myPlist = PlistStuff()
     
@@ -24,6 +25,7 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+       
         
         myMoviesTableViewObj.dataSource = self
         myMoviesTableViewObj.delegate = self
@@ -45,7 +47,7 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
                     print(error)
                     print(".. tried to load an existing plist but it didn't load or wasn't there")
             }
-        
+       
     }
     
 
@@ -62,58 +64,73 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
                 cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle,reuseIdentifier: cellID) as! MyMoviesTableViewCell
                 }
                 
-        //        var sortedMovieDictionary8 = self.movieDictionary8.sorted(by: {$0.value.mYear < $1.value.mYear})
-        //        print("\nSortedMovieDictionary = \n \(sortedMovieDictionary8)")
-               
-                
             var key = Array(self.movieDictionary.keys)[indexPath.row]
             var value = Array(self.movieDictionary.values)[indexPath.row]
             
             print("*** key : \(key)")
             print("*** value: \(value)")
                 
-                //cell.mainText?.text = movieDictionary8.keys[indexPath.row]
-        //        cell.mainText?.text = d[indexPath.row]
-                
-                
             cell.myMovieName?.text = key
             cell.myMovieYear?.text = value
-            //cell.imageView?.image = UIImage(named: imageArray[indexPath.row])
             
-//            //self.setImage(from: url)
-//            let url = value.mPoster
-//            print("value of url ==== \(url)")
-//            //self.setImage(from: url)
-//
-//            //var myImage = UIImage(named: imageArray[indexPath.row])
-//            var myImage = UIImage(named: defaultImageArray[0])
-//
-//            if url == "" {
-//                //myImage = UIImage(named: imageArray[indexPath.row])
-//                myImage = UIImage(named: defaultImageArray[0])
-//            } else {
-//                let imageURL = URL(string: url)
-//                if let imageData = try? Data(contentsOf: imageURL!) {
-//
-//                    //if (try? Data(contentsOf: imageURL!)) != nil {
-//                    myImage = UIImage(data: imageData)
-//                    print(myImage)
-//                    DispatchQueue.main.async {
-//                        //self.detailImage.image = image
-//                        //self.imageView?.image = image
-//                        //cell.imageView?.image = myImage
-//                        return myImage
-//                    }
-//                } else {
-//                    //myImage = UIImage(named: imageArray[indexPath.row])
-//                    myImage = UIImage(named: defaultImageArray[0])
-//                }
-//            }
-//         
-//            cell.imageView?.image = myImage
-           
             return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("You tapped cell number \(indexPath.row).")
+
+            //let selectedItem = movieArray8[indexPath.row]
+        
+        var movieKeySelected = Array(self.movieDictionary.keys)[indexPath.row]
+        var movieValueSelected = Array(self.movieDictionary.values)[indexPath.row]
+            
+       //.. The first line creates an alert controller that displays the title “Log In” and underneath the message “Enter Password”
+
+       let alert = UIAlertController(title: "Your Choice", message: "\(movieKeySelected)", preferredStyle: .alert)
+
+       //.. because we want to display a text field on the alert controller, the alert controller’s preferredStyle must be .alert
+
+       alert.addTextField(configurationHandler: {(textField) in                textField.placeholder = "Your Comments here..."
+           //textField.isSecureTextEntry = true
+       })
+
+        //.. defines Cancel button
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { action -> Void in
+                //Just dismiss the action sheet
+        })
+    
+       //.. defines OK button
+       let okAction = UIAlertAction(title: "OK", style: .default, handler: { action -> Void in
+
+               //.. called savedText, which represents the first text field (note the index value of 0) on the alert controller. If you add more than one text field to an alert controller, you’ll need to define additional constants to represent those other text fields
+
+                let savedText = alert.textFields![0] as UITextField
+                let savedText2: String  = savedText.text ?? ""
+            
+                let savedYear = String(movieValueSelected.prefix(4))
+            
+                print("new comments = \(savedText)")
+            
+                //.. attempt to save the new data to plist
+                //.. add the new movie
+                self.movieDictionary.updateValue("\(savedYear) - \(savedText2)", forKey: movieKeySelected)
+                print("movieDictionary now with comments = \(self.movieDictionary)")
+                //.. save the plist
+                do {
+                    try self.myPlist.savePropertyList(self.movieDictionary)
+                    self.myMoviesTableViewObj.reloadData()
+                } catch {
+                    print("no way... not happening...")
+                }
+
+           })
+
+               //..adds the button to the alert controller and next line presents or displays the alert controller
+                alert.addAction(okAction)
+                alert.addAction(cancelAction)
+                self.present(alert, animated: true , completion: nil)
+
+        }
     
 
 }
