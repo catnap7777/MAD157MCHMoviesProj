@@ -16,6 +16,8 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     var movieDictionary: [String : String] = [:]
     
     var moviePickerData: [String] = [String]()
+    
+    var myMovieChosen: String = ""
 
     //.. instantiate class
     let myPlist = PlistStuff()
@@ -86,65 +88,42 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         return pickerLabel
     }
 
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-//        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//            //.. tags are used to distinguish between the two picker on the view controller
-//            if pickerView.tag == 1 {
-//                let pickerTypeIndex = pickCarTypeObj.selectedRow(inComponent: 0)
-//                carTypeChosen = pickerTypeData[pickerTypeIndex]
-//
-//                carTypeDesc = priusModelDictionary[carTypeChosen]?.desc as! String
-//                carTypePrice = priusModelDictionary[carTypeChosen]?.price as! Double
-//                print("pickerView tag1 triggered")
-//            }
-//
-//            if pickerView.tag == 2 {
-//                let pickerColorIndex = pickColorObj.selectedRow(inComponent: 0)
-//                carColorChosen = pickerColorData[pickerColorIndex]
-//
-//                switch pickerColorIndex {
-//                case 0:
-//                    priusColorPict.image = UIImage.init(named: "electricStormBlue.png")
-//                    pictureNameString = "electricStormBlue.png"
-//                    carColorEnumChosen = PriusStructures.CarColor.Blue
-//                    //print("pictureNameString in first VC1111 = \(pictureNameString)")
-//                case 1:
-//                    priusColorPict.image = UIImage.init(named: "windChillPearl.png")
-//                    pictureNameString = "windChillPearl.png"
-//                    carColorEnumChosen = PriusStructures.CarColor.Pearl
-//                    //print("pictureNameString in first VC2222 = \(pictureNameString)")
-//                case 2:
-//                    priusColorPict.image = UIImage.init(named: "classicSilverMetallic.png")
-//                    pictureNameString = "classicSilverMetallic.png"
-//                    carColorEnumChosen = PriusStructures.CarColor.Silver
-//                case 3:
-//                    priusColorPict.image = UIImage.init(named: "magneticGrayMetallic.png")
-//                    pictureNameString = "magneticGrayMetallic.png"
-//                    carColorEnumChosen = PriusStructures.CarColor.Gray
-//                case 4:
-//                    priusColorPict.image = UIImage.init(named: "midnightBlackMetallic.png")
-//                    pictureNameString = "midnightBlackMetallic.png"
-//                    carColorEnumChosen = PriusStructures.CarColor.Black
-//                case 5:
-//                    priusColorPict.image = UIImage.init(named: "supersonicRed.png")
-//                    pictureNameString = "supersonicRed.png"
-//                    carColorEnumChosen = PriusStructures.CarColor.Red
-//                case 6:
-//                    priusColorPict.image = UIImage.init(named: "seaGlassPearl.png")
-//                    pictureNameString = "seaGlassPearl.png"
-//                    carColorEnumChosen = PriusStructures.CarColor.Pearl
-//                default:
-//                    priusColorPict.image = UIImage.init(named: "electricStormBlue.png")
-//                    pictureNameString = "electricStormBlue.png"
-//                    carColorEnumChosen = PriusStructures.CarColor.Blue
-//                }
-//            }
-//
-//        }
+        let pickerTypeIndex = myMoviePicker.selectedRow(inComponent: 0)
+        
+        myMovieChosen = moviePickerData[pickerTypeIndex]
+        print("myMovieChosen = \(myMovieChosen)")
+    }
 
-        
     
     @IBAction func deleteMyMoviePressed(_ sender: Any) {
+        
+    let alert = UIAlertController(title: "Confirm", message: "Are you sure you want to delete this movie??", preferredStyle: .alert)
+        
+    let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { action -> Void in
+        //Just dismiss the action sheet
+        })
+        
+    let okAction = UIAlertAction(title: "Delete", style: .default, handler: { action -> Void in
+        
+        //.. remove the key
+        print("movie to delete = \(self.myMovieChosen)")
+        self.movieDictionary.removeValue(forKey: self.myMovieChosen)
+        //.. save the plist
+        do {
+            try self.myPlist.savePropertyList(self.movieDictionary)
+            self.myMoviePicker.reloadAllComponents()
+            self.myMoviePicker.reloadComponent(0)
+        } catch {
+            print("..not able to resave plist..")
+        }
+        
+    })
+        
+    alert.addAction(cancelAction)
+    alert.addAction(okAction)
+    self .present(alert, animated: true, completion: nil )
         
     }
     

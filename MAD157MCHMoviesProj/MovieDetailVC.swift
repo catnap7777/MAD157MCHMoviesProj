@@ -76,7 +76,6 @@ class MovieDetailVC: UIViewController {
        
     }
     
-    
     @IBAction func IMDBButton(_ sender: Any) {
         
         let imdbURL = "https://www.imdb.com/title/" + movieIMDB

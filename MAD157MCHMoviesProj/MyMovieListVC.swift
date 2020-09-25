@@ -50,6 +50,10 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
        
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.myMoviesTableViewObj.reloadData()
+    }
+    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movieDictionary.count
