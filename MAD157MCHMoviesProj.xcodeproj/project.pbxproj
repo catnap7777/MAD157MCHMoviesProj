@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3A50D9F8251E68B200403D4F /* MyMovieListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50D9F7251E68B200403D4F /* MyMovieListVC.swift */; };
 		3A50D9FC251E6A6700403D4F /* MyMoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50D9FB251E6A6700403D4F /* MyMoviesTableViewCell.swift */; };
+		3A50DA00251EA58200403D4F /* MyMovieDeleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50D9FF251EA58200403D4F /* MyMovieDeleteVC.swift */; };
 		3A766D3D251BB0D100B299C4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A766D3C251BB0D100B299C4 /* TableViewCell.swift */; };
 		3A84553F251BCD400040877A /* OpenImdbVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A84553E251BCD400040877A /* OpenImdbVCViewController.swift */; };
 		3A845541251BE5F50040877A /* tygermatrix303.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A845540251BE5F50040877A /* tygermatrix303.png */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		3A50D9F7251E68B200403D4F /* MyMovieListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMovieListVC.swift; sourceTree = "<group>"; };
 		3A50D9FB251E6A6700403D4F /* MyMoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMoviesTableViewCell.swift; sourceTree = "<group>"; };
+		3A50D9FF251EA58200403D4F /* MyMovieDeleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMovieDeleteVC.swift; sourceTree = "<group>"; };
 		3A766D3C251BB0D100B299C4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		3A84553E251BCD400040877A /* OpenImdbVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenImdbVCViewController.swift; sourceTree = "<group>"; };
 		3A845540251BE5F50040877A /* tygermatrix303.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tygermatrix303.png; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				3A84553E251BCD400040877A /* OpenImdbVCViewController.swift */,
 				3A50D9F7251E68B200403D4F /* MyMovieListVC.swift */,
 				3A50D9FB251E6A6700403D4F /* MyMoviesTableViewCell.swift */,
+				3A50D9FF251EA58200403D4F /* MyMovieDeleteVC.swift */,
 				3AA0CEF1251AA50800239261 /* Main.storyboard */,
 				3AA0CEF4251AA50A00239261 /* Assets.xcassets */,
 				3AA0CF15251BA83B00239261 /* hp.png */,
@@ -196,6 +199,7 @@
 			files = (
 				3A84556C251D3AF10040877A /* PlistStuff.swift in Sources */,
 				3AA0CF02251AA8EA00239261 /* SearchVC.swift in Sources */,
+				3A50DA00251EA58200403D4F /* MyMovieDeleteVC.swift in Sources */,
 				3A50D9FC251E6A6700403D4F /* MyMoviesTableViewCell.swift in Sources */,
 				3AA0CF04251AB50100239261 /* HomeVC.swift in Sources */,
 				3AA0CEEC251AA50800239261 /* AppDelegate.swift in Sources */,

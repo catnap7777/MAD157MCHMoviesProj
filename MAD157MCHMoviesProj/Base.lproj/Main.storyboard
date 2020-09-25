@@ -217,18 +217,78 @@
         <!--Delete-->
         <scene sceneID="WPv-rv-L1s">
             <objects>
-                <viewController id="yOX-Qd-Rl6" sceneMemberID="viewController">
+                <viewController id="yOX-Qd-Rl6" customClass="MyMovieDeleteVC" customModule="MAD157MCHMoviesProj" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zZH-y8-qew">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="7La-UH-xZR">
+                                <rect key="frame" x="25" y="98" width="364" height="429"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGJ-3y-Htc">
+                                        <rect key="frame" x="11" y="0.0" width="342" height="39"/>
+                                        <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="39" id="Y88-41-ztd"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="342" id="eIi-sp-qKE"/>
+                                            <constraint firstAttribute="height" constant="39" id="fa4-9i-llg"/>
+                                            <constraint firstAttribute="width" constant="342" id="h9W-hC-S8t"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="MCH Movies">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="0.0069375394172468408" blue="0.081287042612919636" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <font key="NSFont" size="24" name="Noteworthy-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ovp-p1-Rnp">
+                                        <rect key="frame" x="0.0" y="104" width="364" height="211"/>
+                                        <color key="backgroundColor" red="0.95354956388473511" green="0.81153225898742676" blue="0.90651267766952515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="364" id="8ZZ-3D-L2H"/>
+                                            <constraint firstAttribute="height" constant="211" id="ox6-qN-acW"/>
+                                        </constraints>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4K-AV-eDW">
+                                        <rect key="frame" x="117" y="380" width="130" height="49"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="Nvu-oC-1ws"/>
+                                            <constraint firstAttribute="height" constant="49" id="PcE-cN-QGs"/>
+                                        </constraints>
+                                        <state key="normal" title="Delete My Movie"/>
+                                        <connections>
+                                            <action selector="deleteMyMoviePressed:" destination="yOX-Qd-Rl6" eventType="touchUpInside" id="NIE-Ef-Bt5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="429" id="t7U-zO-83F"/>
+                                    <constraint firstAttribute="width" constant="364" id="x3q-TF-mwh"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="0.8804865236455951" green="0.92722022338914478" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="7La-UH-xZR" firstAttribute="leading" secondItem="u2L-ed-5Sm" secondAttribute="leading" constant="25" id="9f5-KA-xDX"/>
+                            <constraint firstItem="7La-UH-xZR" firstAttribute="top" secondItem="u2L-ed-5Sm" secondAttribute="top" constant="10" id="hVA-kx-Efn"/>
+                            <constraint firstItem="u2L-ed-5Sm" firstAttribute="trailing" secondItem="7La-UH-xZR" secondAttribute="trailing" constant="25" id="kaM-BX-vCj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="u2L-ed-5Sm"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Delete" image="trash.fill" catalog="system" id="D7y-Pm-ipU"/>
+                    <connections>
+                        <outlet property="deleteMyMovieButtonObj" destination="b4K-AV-eDW" id="yVU-66-lFb"/>
+                        <outlet property="myMoviePicker" destination="Ovp-p1-Rnp" id="0HL-qb-UGX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckT-Bi-isf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1449" y="-192"/>
+            <point key="canvasLocation" x="1446.376811594203" y="-192.1875"/>
         </scene>
         <!--IMDB-->
         <scene sceneID="PaA-tn-5fl">
