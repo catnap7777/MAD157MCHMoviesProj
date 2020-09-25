@@ -10,18 +10,115 @@
         <!--My Movies-->
         <scene sceneID="WWY-tR-8Dw">
             <objects>
-                <viewController id="psB-bC-22Y" sceneMemberID="viewController">
+                <viewController id="psB-bC-22Y" customClass="MyMovieListVC" customModule="MAD157MCHMoviesProj" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FVG-Sh-AHy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVT-Nu-glx">
+                                <rect key="frame" x="36" y="95" width="342" height="39"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="MCH Movies">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="0.0069375394172468408" blue="0.081287042612919636" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="24" name="Noteworthy-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click on movie to edit..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyI-Cd-ezq">
+                                <rect key="frame" x="36" y="162.5" width="342" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K6e-8H-5Xh">
+                                <rect key="frame" x="36" y="193" width="342" height="563"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="563" id="8lf-o6-1A4"/>
+                                    <constraint firstAttribute="width" constant="342" id="KRW-R8-S1c"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell2" rowHeight="136" id="H5Y-MY-czS" customClass="MyMoviesTableViewCell" customModule="MAD157MCHMoviesProj" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="342" height="136"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="H5Y-MY-czS" id="CdG-iW-vAY">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="136"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WzR-qg-f6s">
+                                                    <rect key="frame" x="0.0" y="0.0" width="342" height="75"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="gcs-vk-AXS"/>
+                                                        <constraint firstAttribute="width" secondItem="WzR-qg-f6s" secondAttribute="height" multiplier="57:10" id="hFz-3z-B3j"/>
+                                                        <constraint firstAttribute="width" constant="342" id="qiD-Mo-3ks"/>
+                                                    </constraints>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Label">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.00049849017523229122" green="0.21503585577011108" blue="0.99631887674331665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="20" name="Noteworthy-Light"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRa-KW-hFH">
+                                                    <rect key="frame" x="0.0" y="79" width="108" height="49"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="49" id="ar3-YE-0gK"/>
+                                                        <constraint firstAttribute="width" secondItem="LRa-KW-hFH" secondAttribute="height" multiplier="108:49" id="jsg-Ga-Al1"/>
+                                                        <constraint firstAttribute="width" constant="108" id="xrC-xx-N8G"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="LRa-KW-hFH" secondAttribute="bottom" constant="8" id="FFk-QR-Nko"/>
+                                                <constraint firstAttribute="trailing" secondItem="LRa-KW-hFH" secondAttribute="trailing" constant="234" id="Lq8-bB-Oeg"/>
+                                                <constraint firstItem="LRa-KW-hFH" firstAttribute="top" secondItem="WzR-qg-f6s" secondAttribute="bottom" constant="4" id="ZSJ-4U-AlS"/>
+                                                <constraint firstItem="WzR-qg-f6s" firstAttribute="leading" secondItem="CdG-iW-vAY" secondAttribute="leading" id="eho-wH-aZe"/>
+                                                <constraint firstItem="WzR-qg-f6s" firstAttribute="top" secondItem="CdG-iW-vAY" secondAttribute="top" id="hjH-ab-ipv"/>
+                                                <constraint firstAttribute="trailing" secondItem="WzR-qg-f6s" secondAttribute="trailing" id="maq-hM-jSG"/>
+                                                <constraint firstItem="LRa-KW-hFH" firstAttribute="leading" secondItem="CdG-iW-vAY" secondAttribute="leading" id="wiC-s9-Fj1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="myMovieName" destination="WzR-qg-f6s" id="1eb-qg-5Dq"/>
+                                            <outlet property="myMovieYear" destination="LRa-KW-hFH" id="BnA-ZP-TRA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.92249954689507074" green="1" blue="0.90573315234745544" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="VyI-Cd-ezq" firstAttribute="leading" secondItem="pVT-Nu-glx" secondAttribute="leading" id="4tM-WN-J3b"/>
+                            <constraint firstItem="K6e-8H-5Xh" firstAttribute="top" secondItem="VyI-Cd-ezq" secondAttribute="bottom" constant="10" id="4yp-nY-SM3"/>
+                            <constraint firstItem="VyI-Cd-ezq" firstAttribute="trailing" secondItem="pVT-Nu-glx" secondAttribute="trailing" id="ATx-pv-8yp"/>
+                            <constraint firstItem="K6e-8H-5Xh" firstAttribute="leading" secondItem="5Ce-wQ-MJg" secondAttribute="leading" constant="36" id="Cen-6d-maB"/>
+                            <constraint firstItem="VyI-Cd-ezq" firstAttribute="trailing" secondItem="K6e-8H-5Xh" secondAttribute="trailing" id="DB3-sD-TEi"/>
+                            <constraint firstItem="5Ce-wQ-MJg" firstAttribute="bottom" secondItem="K6e-8H-5Xh" secondAttribute="bottom" constant="57" id="MSK-Dy-0bl"/>
+                            <constraint firstItem="VyI-Cd-ezq" firstAttribute="leading" secondItem="K6e-8H-5Xh" secondAttribute="leading" id="YTs-C6-a0A"/>
+                            <constraint firstItem="VyI-Cd-ezq" firstAttribute="top" secondItem="pVT-Nu-glx" secondAttribute="bottom" constant="28.5" id="tGJ-Mw-Vde"/>
+                            <constraint firstItem="5Ce-wQ-MJg" firstAttribute="trailing" secondItem="K6e-8H-5Xh" secondAttribute="trailing" constant="36" id="wZl-Le-E7R"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="5Ce-wQ-MJg"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Movies" image="list.dash" catalog="system" id="qJx-vg-dcE"/>
+                    <connections>
+                        <outlet property="myMoviesTableViewObj" destination="K6e-8H-5Xh" id="D5B-LR-lIm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fze-r1-TRB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="562" y="-192"/>
+            <point key="canvasLocation" x="560.86956521739137" y="-192.1875"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="Cv1-ww-7Lp">
@@ -108,7 +205,7 @@
             </objects>
             <point key="canvasLocation" x="-1114.4927536231885" y="-977.00892857142856"/>
         </scene>
-        <!--Favorites-->
+        <!--Delete-->
         <scene sceneID="WPv-rv-L1s">
             <objects>
                 <viewController id="yOX-Qd-Rl6" sceneMemberID="viewController">
@@ -118,7 +215,7 @@
                         <color key="backgroundColor" red="0.8804865236455951" green="0.92722022338914478" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="u2L-ed-5Sm"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favorites" image="heart" catalog="system" id="D7y-Pm-ipU"/>
+                    <tabBarItem key="tabBarItem" title="Delete" image="trash.fill" catalog="system" id="D7y-Pm-ipU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckT-Bi-isf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -578,10 +675,10 @@
     </scenes>
     <resources>
         <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="106"/>
-        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="popcornpic1sm2.png" width="232.5" height="151.5"/>
+        <image name="trash.fill" catalog="system" width="121" height="128"/>
         <image name="tygermatrix303.png" width="69.75" height="72"/>
     </resources>
 </document>
