@@ -53,6 +53,8 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         cell.mainText?.text = mRow.xName
         cell.subText?.text = mRow.xYear
+        cell.typeText?.text = mRow.xType
+        
             
         //.. if using a dictionary instead
 //        var key = Array(self.movieDictionary8.keys)[indexPath.row]

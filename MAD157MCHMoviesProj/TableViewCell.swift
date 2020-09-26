@@ -12,6 +12,7 @@ class TableViewCell: UITableViewCell {
 
     @IBOutlet var mainText: UILabel!
     @IBOutlet var subText: UILabel!
+    @IBOutlet var typeText: UILabel!
     @IBOutlet var cellImage: UIImageView!
    
     override func awakeFromNib() {
