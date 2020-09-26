@@ -111,13 +111,18 @@ class SearchVC: UIViewController {
        
         
         //.. array stuff
+        //.. example of complex sort
         //myArray.sort{ $0.1 != $1.1 ? $0.1 > $1.1 : $0.0 < $1.0 }
-        //..********* check how this is sorting, different from others
+        //..var movieArrayTup: [(xName: String, xYear: String, xType: String, xIMDB: String, xPoster: String)] = [("","","","","")]
+        
         //.. mmArraySorted = mmArray.sorted { $0.0 < $1.0 } <- sort on name only
-        let movieArrayTupSorted = movieArrayTup.sorted { $0.1 > $1.1 }
+        //.. sort on movie name only
+        //let movieArrayTupSorted = movieArrayTup.sorted { $0.0 < $1.0 }
+        //.. if the movie names aren't equal, sort on the names asc... if they are equal, sort on the year desc
+        let movieArrayTupSorted = movieArrayTup.sorted { $0.0 != $1.0 ? $0.0 < $1.0 : $0.1 > $1.1 }
        
-        print("$$$$$$$$$ movieArrayTup = \(movieArrayTup)")
-        print("$$$$$$$$$ movieArrayTupSorted = \(movieArrayTupSorted)")
+//        print("$$$$$$$$$ movieArrayTup = \(movieArrayTup)")
+//        print("$$$$$$$$$ movieArrayTupSorted = \(movieArrayTupSorted)")
         
         vc.movieArrayTupSorted2 = movieArrayTupSorted
         //.. you can also call a func instead (ie. vc.kamSetArray(movieArray8) for example

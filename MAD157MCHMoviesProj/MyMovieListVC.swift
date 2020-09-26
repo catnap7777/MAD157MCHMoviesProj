@@ -35,7 +35,6 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         do {
             //.. try to load
             let dictionaryload = try myPlist.loadPropertyList()
-            print("dictionaryloaded is now... \(dictionaryload)")
             movieDictionary = dictionaryload
         
             } catch {
@@ -56,7 +55,6 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         do {
             //.. try to load
             let dictionaryload2 = try myPlist.loadPropertyList()
-            print("dictionaryloaded is now... \(dictionaryload2)")
             movieDictionary = dictionaryload2
         
             } catch {

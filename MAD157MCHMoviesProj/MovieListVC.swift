@@ -31,8 +31,6 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         finalName = finalName.uppercased()
         labelName.text = "\"" + finalName + "\"" + " Movies"
         
-        print("&&&&&& movieArrayTupSorted2 = \(movieArrayTupSorted2)")
-        
     }
     
     func tableView( _ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,7 +50,7 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
            
         //.. note: this already came in sorted from SearchVC.swift
         let mRow = movieArrayTupSorted2[indexPath.row]
-        print("*** mRow: \(mRow)")
+        
         cell.mainText?.text = mRow.xName
         cell.subText?.text = mRow.xYear
             

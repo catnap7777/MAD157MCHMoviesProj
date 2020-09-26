@@ -44,7 +44,6 @@ class MovieDetailVC: UIViewController {
         do {
             //.. try to load
             let dictionaryload = try myPlist.loadPropertyList()
-            print("dictionaryloaded is now... \(dictionaryload)")
         
             } catch {
                     //.. if not loaded (ie. not found bc it's new), try to save a new one

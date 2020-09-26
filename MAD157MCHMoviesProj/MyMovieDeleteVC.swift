@@ -14,11 +14,13 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     @IBOutlet var deleteMyMovieButtonObj: UIButton!
     @IBOutlet var myView: UIView!
     
+    //.. NOTE: complex dictionary objects (objects with key:tuple - called CFType) cannot be saved in a plist
+    //..  This movieDictionary is for the plist
     var movieDictionary: [String : String] = [:]
-    var moviePickerData: [String] = [String]()
+    var moviePickerData: [String] = [String]() //.. string array of movie names
     var myMovieChosen: String = ""
 
-    //.. instantiate class
+    //.. instantiate plist class
     let myPlist = PlistStuff()
     
     override func viewDidLoad() {
@@ -68,15 +70,14 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //.. make sure correct movie array is built
-        //.. try to load existing plist... if it doesn't exist, "save"/create it
         
         moviePickerData.removeAll()
         
+        //.. make sure correct movie array is built
+        //.. try to load existing plist... if it doesn't exist, "save"/create it
         do {
             //.. try to load
-            var dictionaryload = try myPlist.loadPropertyList()
-            print("dictionaryloaded is now... \(dictionaryload)")
+            let dictionaryload = try myPlist.loadPropertyList()
             movieDictionary = dictionaryload
             
             for (k,v) in movieDictionary {
@@ -84,8 +85,6 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
             }
             
             moviePickerData.sort(by: <)
-            
-            print("moviePickerData - \(moviePickerData)")
         
             } catch {
                     //.. if not loaded (ie. not found bc it's new), try to save a new one
@@ -111,7 +110,6 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        //return movieDictionary.count
         return moviePickerData.count
     }
     
@@ -139,7 +137,7 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         let pickerTypeIndex = myMoviePicker.selectedRow(inComponent: 0)
         
         myMovieChosen = moviePickerData[pickerTypeIndex]
-        print("myMovieChosen = \(myMovieChosen)")
+        //print("myMovieChosen = \(myMovieChosen)")
     }
 
     
@@ -169,7 +167,7 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
             self.myMoviePicker.reloadComponent(0)
             self.myView.reloadInputViews()
         } catch {
-            print("..not able to resave plist..")
+            print("..not able to resave plist after attempted delete..")
         }
         
     })
