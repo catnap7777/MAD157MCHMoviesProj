@@ -28,9 +28,10 @@ class MovieDetailVC: UIViewController {
     let defaultImageArray = ["posternf.png"]
     
     //.. NOTE: complex dictionary objects (objects with key:tuple - called CFType) cannot be saved in a plist
+    //..  This movieDictionary is for the plist
     var movieDictionary: [String : String] = [:]
     
-    //.. instantiate class
+    //.. instantiate plist class
     let myPlist = PlistStuff()
     
     override func viewDidLoad() {
@@ -42,7 +43,7 @@ class MovieDetailVC: UIViewController {
         //.. try to load existing plist... if it doesn't exist, "save"/create it
         do {
             //.. try to load
-            var dictionaryload = try myPlist.loadPropertyList()
+            let dictionaryload = try myPlist.loadPropertyList()
             print("dictionaryloaded is now... \(dictionaryload)")
         
             } catch {
@@ -56,9 +57,6 @@ class MovieDetailVC: UIViewController {
                     print(".. tried to load an existing plist but it didn't load or wasn't there")
                 }
         
-        print("in movie detail view controller" )
-        
-        
         //testLabel.text = testString
         movieTitleLabel.text = movieTitle
         yearLabel.text = movieYear
@@ -68,12 +66,13 @@ class MovieDetailVC: UIViewController {
                 
         //        let url = URL(string: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/12/11/naturo-monkey-selfie.jpg?w968h681")
         
+        //.. value of which was already set from MovieListVC when row was clicked on and segue performed
         let url = moviePoster
         self.detailImage.image = UIImage(named: defaultImageArray[0])
+        //.. takes the movie url from moviePoster and call func setImage to place picture on screen
         self.setImage(from: url)
-      //  self.imgView.downloadImage(from: url!)
+        //  self.imgView.downloadImage(from: url!)
                 
-       
     }
     
     @IBAction func IMDBButton(_ sender: Any) {
@@ -90,6 +89,7 @@ class MovieDetailVC: UIViewController {
         do {
             var dictionary2 = try myPlist.loadPropertyList()
             
+            //.. examples of other things you can do
 //            dictionary2.updateValue("xxxxxxvalue4", forKey: "key3")
 //            dictionary2.updateValue("2033", forKey: "movie2")
 //            dictionary2.updateValue("year4", forKey: "movie4")
@@ -114,21 +114,8 @@ class MovieDetailVC: UIViewController {
                 print(error)
                 print("nope... did NOT save/update plist with 'new' movie... why not?")
             }
-//        }
     }
-    
-    func setMovieDetail(fTitle: String) {
-
-        self.movieTitle = fTitle
-
-        print("you are in setMovieDetail... movieTitle = \(movieTitle)")
-        print("fTitle coming in is: \(fTitle)")
-
-        //testLabel.text = movieTitle
-        //testLabel.text = "What?????"
-        
-    }
-    
+ 
     func setImage(from url: String) {
         guard let imageURL = URL(string: url) else { return }
         
