@@ -13,14 +13,14 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     @IBOutlet var myMoviesTableViewObj: UITableView!
    
     //.. NOTE: complex dictionary objects (objects with key:tuple - called CFType) cannot be saved in a plist
+    //..  This movieDictionary is for the plist
     var movieDictionary: [String : String] = [:]
     var mmArray: [(mmName: String, mmYear: String)] = [("","")]
     var mmArraySorted: [(mmName: String, mmYear: String)] = [("","")]
     
     let cellID = "cellID"
     
-    
-    //.. instantiate class
+    //.. instantiate plist class
     let myPlist = PlistStuff()
     
     override func viewDidLoad() {
@@ -28,14 +28,13 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
 
         // Do any additional setup after loading the view.
        
-        
         myMoviesTableViewObj.dataSource = self
         myMoviesTableViewObj.delegate = self
         
         //.. try to load existing plist... if it doesn't exist, "save"/create it
         do {
             //.. try to load
-            var dictionaryload = try myPlist.loadPropertyList()
+            let dictionaryload = try myPlist.loadPropertyList()
             print("dictionaryloaded is now... \(dictionaryload)")
             movieDictionary = dictionaryload
         
@@ -56,7 +55,7 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         //.. try to load existing plist... if it doesn't exist, "save"/create it
         do {
             //.. try to load
-            var dictionaryload2 = try myPlist.loadPropertyList()
+            let dictionaryload2 = try myPlist.loadPropertyList()
             print("dictionaryloaded is now... \(dictionaryload2)")
             movieDictionary = dictionaryload2
         
@@ -87,8 +86,6 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
                 cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle,reuseIdentifier: cellID) as! MyMoviesTableViewCell
                 }
                 
-            //var mmArray: [(mmName: String, mmYear: String)] = [("","")]
-        
             mmArray.removeAll()
             
             for (k,v) in movieDictionary {
@@ -97,14 +94,11 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         
             mmArraySorted = mmArray.sorted { $0.0 < $1.0 }
         
-            var mmRow = mmArraySorted[indexPath.row]
+        let mmRow = mmArraySorted[indexPath.row]
         
+        //.. if using a dictionary instead of an array
 //            var key = Array(self.movieDictionary.keys)[indexPath.row]
 //            var value = Array(self.movieDictionary.values)[indexPath.row]
-//
-//            print("*** key : \(key)")
-//            print("*** value: \(value)")
-//
 //            cell.myMovieName?.text = key
 //            cell.myMovieYear?.text = value
                 
@@ -119,16 +113,14 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
 
             //let selectedItem = movieArray8[indexPath.row]
         
-        var mmRowSelected = mmArraySorted[indexPath.row]
-        var movieKeySelected = mmRowSelected.mmName
-        var movieValueSelected = mmRowSelected.mmYear
+        let mmRowSelected = mmArraySorted[indexPath.row]
+        let movieKeySelected = mmRowSelected.mmName
+        let movieValueSelected = mmRowSelected.mmYear
         
+        //.. if using a dictionary instead of an array
 //        var movieKeySelected = Array(self.movieDictionary.keys)[indexPath.row]
 //        var movieValueSelected = Array(self.movieDictionary.values)[indexPath.row]
         
-//        var movieKeySelected = Array(self.movieDictionary.keys)[indexPath.row]
-//        var movieValueSelected = Array(self.movieDictionary.values)[indexPath.row]
-            
        //.. The first line creates an alert controller that displays the title “Log In” and underneath the message “Enter Password”
 
        let alert = UIAlertController(title: "Your Choice", message: "\(movieKeySelected)", preferredStyle: .alert)
@@ -152,14 +144,12 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
                 let savedText = alert.textFields![0] as UITextField
                 let savedText2: String  = savedText.text ?? ""
             
+                //.. save the year from the movie
                 let savedYear = String(movieValueSelected.prefix(4))
             
-                print("new comments = \(savedText)")
-            
-                //.. attempt to save the new data to plist
-                //.. add the new movie
+                //.. add the new movie with updated "year/comment" to the dictionary
                 self.movieDictionary.updateValue("\(savedYear) - \(savedText2)", forKey: movieKeySelected)
-                print("movieDictionary now with comments = \(self.movieDictionary)")
+                
                 //.. save the plist
                 do {
                     try self.myPlist.savePropertyList(self.movieDictionary)
