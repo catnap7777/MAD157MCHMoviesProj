@@ -29,16 +29,12 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         myMoviePicker.dataSource = self
         myMoviePicker.delegate = self
         
-        //.. empty moviePickerData
-        //moviePickerData.removeAll()
-        
+        //.. make sure correct movie array is built
         self.moviePickerData.removeAll()
         for (k,v) in self.movieDictionary {
             self.moviePickerData.append(k)
         }
-//        self.myMoviePicker.reloadAllComponents()
-//        self.myMoviePicker.reloadComponent(0)
-        
+ 
         //.. try to load existing plist... if it doesn't exist, "save"/create it
         do {
             //.. try to load
@@ -68,6 +64,7 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        //.. make sure correct movie array is built
         self.moviePickerData.removeAll()
         for (k,v) in self.movieDictionary {
             self.moviePickerData.append(k)
@@ -75,38 +72,6 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         self.myMoviePicker.reloadAllComponents()
         self.myMoviePicker.reloadComponent(0)
     }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//
-//            //.. try to load existing plist... if it doesn't exist, "save"/create it
-//            do {
-//                //.. try to load
-//                var dictionaryload = try myPlist.loadPropertyList()
-//                print("dictionaryloaded is now... \(dictionaryload)")
-//                movieDictionary = dictionaryload
-//
-//                for (k,v) in movieDictionary {
-//                    moviePickerData.append(k)
-//                }
-//
-//                    moviePickerData.sort(by: <)
-//
-//                    print("moviePickerData - \(moviePickerData)")
-//
-////                    self.myMoviePicker.reloadAllComponents()
-////                    self.myMoviePicker.reloadComponent(0)
-//
-//                } catch {
-//                        //.. if not loaded (ie. not found bc it's new), try to save a new one
-//                        do {
-//                            var dictionaryInitSave = try myPlist.savePropertyList(movieDictionary)
-//                            } catch {
-//                                print("..tried to save a 'new' plist but it didn't work")
-//                            }
-//                        print(error)
-//                        print(".. tried to load an existing plist but it didn't load or wasn't there")
-//                }
-//    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -161,6 +126,7 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         //.. save the plist
         do {
             try self.myPlist.savePropertyList(self.movieDictionary)
+            //.. make sure correct movie array is built
             self.moviePickerData.removeAll()
             for (k,v) in self.movieDictionary {
                 self.moviePickerData.append(k)
