@@ -12,11 +12,10 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
 
     @IBOutlet var myMoviePicker: UIPickerView!
     @IBOutlet var deleteMyMovieButtonObj: UIButton!
+    @IBOutlet var myView: UIView!
     
     var movieDictionary: [String : String] = [:]
-    
     var moviePickerData: [String] = [String]()
-    
     var myMovieChosen: String = ""
 
     //.. instantiate class
@@ -31,7 +30,14 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         myMoviePicker.delegate = self
         
         //.. empty moviePickerData
-        moviePickerData.removeAll()
+        //moviePickerData.removeAll()
+        
+        self.moviePickerData.removeAll()
+        for (k,v) in self.movieDictionary {
+            self.moviePickerData.append(k)
+        }
+//        self.myMoviePicker.reloadAllComponents()
+//        self.myMoviePicker.reloadComponent(0)
         
         //.. try to load existing plist... if it doesn't exist, "save"/create it
         do {
@@ -61,12 +67,54 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.moviePickerData.removeAll()
+        for (k,v) in self.movieDictionary {
+            self.moviePickerData.append(k)
+        }
+        self.myMoviePicker.reloadAllComponents()
+        self.myMoviePicker.reloadComponent(0)
+    }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//
+//            //.. try to load existing plist... if it doesn't exist, "save"/create it
+//            do {
+//                //.. try to load
+//                var dictionaryload = try myPlist.loadPropertyList()
+//                print("dictionaryloaded is now... \(dictionaryload)")
+//                movieDictionary = dictionaryload
+//
+//                for (k,v) in movieDictionary {
+//                    moviePickerData.append(k)
+//                }
+//
+//                    moviePickerData.sort(by: <)
+//
+//                    print("moviePickerData - \(moviePickerData)")
+//
+////                    self.myMoviePicker.reloadAllComponents()
+////                    self.myMoviePicker.reloadComponent(0)
+//
+//                } catch {
+//                        //.. if not loaded (ie. not found bc it's new), try to save a new one
+//                        do {
+//                            var dictionaryInitSave = try myPlist.savePropertyList(movieDictionary)
+//                            } catch {
+//                                print("..tried to save a 'new' plist but it didn't work")
+//                            }
+//                        print(error)
+//                        print(".. tried to load an existing plist but it didn't load or wasn't there")
+//                }
+//    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return movieDictionary.count
+        //return movieDictionary.count
+        return moviePickerData.count
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -113,16 +161,21 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         //.. save the plist
         do {
             try self.myPlist.savePropertyList(self.movieDictionary)
+            self.moviePickerData.removeAll()
+            for (k,v) in self.movieDictionary {
+                self.moviePickerData.append(k)
+            }
             self.myMoviePicker.reloadAllComponents()
             self.myMoviePicker.reloadComponent(0)
+            self.myView.reloadInputViews()
         } catch {
             print("..not able to resave plist..")
         }
         
     })
         
-    alert.addAction(cancelAction)
     alert.addAction(okAction)
+    alert.addAction(cancelAction)
     self .present(alert, animated: true, completion: nil )
         
     }

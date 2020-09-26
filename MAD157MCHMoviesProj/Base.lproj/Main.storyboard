@@ -284,6 +284,7 @@
                     <connections>
                         <outlet property="deleteMyMovieButtonObj" destination="b4K-AV-eDW" id="yVU-66-lFb"/>
                         <outlet property="myMoviePicker" destination="Ovp-p1-Rnp" id="0HL-qb-UGX"/>
+                        <outlet property="myView" destination="zZH-y8-qew" id="5qI-iH-QIs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckT-Bi-isf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

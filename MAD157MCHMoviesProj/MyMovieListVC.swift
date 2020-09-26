@@ -51,6 +51,23 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        //.. try to load existing plist... if it doesn't exist, "save"/create it
+        do {
+            //.. try to load
+            var dictionaryload2 = try myPlist.loadPropertyList()
+            print("dictionaryloaded is now... \(dictionaryload2)")
+            movieDictionary = dictionaryload2
+        
+            } catch {
+                    //.. if not loaded (ie. not found bc it's new), try to save a new one
+                    do {
+                        var dictionaryInitSave = try myPlist.savePropertyList(movieDictionary)
+                        } catch {
+                            print("..tried to save a 'new' plist but it didn't work")
+                        }
+                    print(error)
+                    print(".. tried to load an existing plist but it didn't load or wasn't there")
+            }
         self.myMoviesTableViewObj.reloadData()
     }
     
