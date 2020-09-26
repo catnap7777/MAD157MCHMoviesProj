@@ -109,7 +109,6 @@ class SearchVC: UIViewController {
             
         vc.finalName = self.searchText
        
-        
         //.. array stuff
         //.. example of complex sort
         //myArray.sort{ $0.1 != $1.1 ? $0.1 > $1.1 : $0.0 < $1.0 }
