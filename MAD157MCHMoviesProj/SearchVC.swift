@@ -120,6 +120,7 @@ class SearchVC: UIViewController {
         print("$$$$$$$$$ movieArrayTupSorted = \(movieArrayTupSorted)")
         
         vc.movieArrayTupSorted2 = movieArrayTupSorted
+        //.. you can also call a func instead (ie. vc.kamSetArray(movieArray8) for example
             
     }
 
