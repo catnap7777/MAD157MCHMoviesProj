@@ -14,6 +14,8 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
    
     //.. NOTE: complex dictionary objects (objects with key:tuple - called CFType) cannot be saved in a plist
     var movieDictionary: [String : String] = [:]
+    var mmArray: [(mmName: String, mmYear: String)] = [("","")]
+    var mmArraySorted: [(mmName: String, mmYear: String)] = [("","")]
     
     let cellID = "cellID"
     
@@ -85,16 +87,29 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
                 cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle,reuseIdentifier: cellID) as! MyMoviesTableViewCell
                 }
                 
-            
+            //var mmArray: [(mmName: String, mmYear: String)] = [("","")]
         
-            var key = Array(self.movieDictionary.keys)[indexPath.row]
-            var value = Array(self.movieDictionary.values)[indexPath.row]
+            mmArray.removeAll()
             
-            print("*** key : \(key)")
-            print("*** value: \(value)")
+            for (k,v) in movieDictionary {
+                mmArray.append((mmName: k, mmYear: v))
+            }
+        
+            mmArraySorted = mmArray.sorted { $0.0 < $1.0 }
+        
+            var mmRow = mmArraySorted[indexPath.row]
+        
+//            var key = Array(self.movieDictionary.keys)[indexPath.row]
+//            var value = Array(self.movieDictionary.values)[indexPath.row]
+//
+//            print("*** key : \(key)")
+//            print("*** value: \(value)")
+//
+//            cell.myMovieName?.text = key
+//            cell.myMovieYear?.text = value
                 
-            cell.myMovieName?.text = key
-            cell.myMovieYear?.text = value
+            cell.myMovieName?.text = mmRow.mmName
+            cell.myMovieYear?.text = mmRow.mmYear
             
             return cell
     }
@@ -104,8 +119,15 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
 
             //let selectedItem = movieArray8[indexPath.row]
         
-        var movieKeySelected = Array(self.movieDictionary.keys)[indexPath.row]
-        var movieValueSelected = Array(self.movieDictionary.values)[indexPath.row]
+        var mmRowSelected = mmArraySorted[indexPath.row]
+        var movieKeySelected = mmRowSelected.mmName
+        var movieValueSelected = mmRowSelected.mmYear
+        
+//        var movieKeySelected = Array(self.movieDictionary.keys)[indexPath.row]
+//        var movieValueSelected = Array(self.movieDictionary.values)[indexPath.row]
+        
+//        var movieKeySelected = Array(self.movieDictionary.keys)[indexPath.row]
+//        var movieValueSelected = Array(self.movieDictionary.values)[indexPath.row]
             
        //.. The first line creates an alert controller that displays the title “Log In” and underneath the message “Enter Password”
 

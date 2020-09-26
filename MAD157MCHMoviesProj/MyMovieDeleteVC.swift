@@ -29,13 +29,50 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         myMoviePicker.dataSource = self
         myMoviePicker.delegate = self
         
+//        //.. make sure correct movie array is built
+//        self.moviePickerData.removeAll()
+//        for (k,v) in self.movieDictionary {
+//            self.moviePickerData.append(k)
+//        }
+//
+//        moviePickerData.sorted(by: <)
+//
+//        //moviePickerData = moviePickerData.sorted { $0 < $1 }
+//
+//        //.. try to load existing plist... if it doesn't exist, "save"/create it
+//        do {
+//            //.. try to load
+//            var dictionaryload = try myPlist.loadPropertyList()
+//            print("dictionaryloaded is now... \(dictionaryload)")
+//            movieDictionary = dictionaryload
+//
+//            for (k,v) in movieDictionary {
+//                moviePickerData.append(k)
+//            }
+//
+//            moviePickerData.sort(by: <)
+//
+//            print("moviePickerData - \(moviePickerData)")
+//
+//            } catch {
+//                    //.. if not loaded (ie. not found bc it's new), try to save a new one
+//                    do {
+//                        var dictionaryInitSave = try myPlist.savePropertyList(movieDictionary)
+//                        } catch {
+//                            print("..tried to save a 'new' plist but it didn't work")
+//                        }
+//                    print(error)
+//                    print(".. tried to load an existing plist but it didn't load or wasn't there")
+//            }
+    
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         //.. make sure correct movie array is built
-        self.moviePickerData.removeAll()
-        for (k,v) in self.movieDictionary {
-            self.moviePickerData.append(k)
-        }
- 
         //.. try to load existing plist... if it doesn't exist, "save"/create it
+        
+        moviePickerData.removeAll()
+        
         do {
             //.. try to load
             var dictionaryload = try myPlist.loadPropertyList()
@@ -60,15 +97,11 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                     print(error)
                     print(".. tried to load an existing plist but it didn't load or wasn't there")
             }
-    
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        //.. make sure correct movie array is built
-        self.moviePickerData.removeAll()
-        for (k,v) in self.movieDictionary {
-            self.moviePickerData.append(k)
-        }
+//        self.moviePickerData.removeAll()
+//        for (k,v) in self.movieDictionary {
+//            self.moviePickerData.append(k)
+//        }
+//        moviePickerData.sort(by: <)
         self.myMoviePicker.reloadAllComponents()
         self.myMoviePicker.reloadComponent(0)
     }
@@ -112,7 +145,7 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     
     @IBAction func deleteMyMoviePressed(_ sender: Any) {
         
-    let alert = UIAlertController(title: "Confirm", message: "Are you sure you want to delete this movie??", preferredStyle: .alert)
+    let alert = UIAlertController(title: "Confirm", message: "Are you sure you want to delete this movie?? - \(myMovieChosen)", preferredStyle: .alert)
         
     let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { action -> Void in
         //Just dismiss the action sheet
@@ -131,6 +164,7 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
             for (k,v) in self.movieDictionary {
                 self.moviePickerData.append(k)
             }
+            self.moviePickerData.sort(by: <)
             self.myMoviePicker.reloadAllComponents()
             self.myMoviePicker.reloadComponent(0)
             self.myView.reloadInputViews()

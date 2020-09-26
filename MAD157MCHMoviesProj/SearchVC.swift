@@ -102,6 +102,8 @@ class SearchVC: UIViewController {
         //let movieArrayTupSorted: [(String, String, String, String, String)] =
 //        let movieArrayTupSorted: () = movieArrayTup.sort{ $0.1 != $1.1 ? $0.1 > $1.1 : $0.0 < $1.0 }
         
+        //..********* check how this is sorting, different from others
+        //.. mmArraySorted = mmArray.sorted { $0.0 < $1.0 } <- sort on name only
         let movieArrayTupSorted = movieArrayTup.sorted { $0.1 > $1.1 }
        
        
@@ -259,9 +261,9 @@ class SearchVC: UIViewController {
                         
                     
                         self.searchTextField.text = ""
-                        self.searchButton.setTitle("Search", for: UIControl.State.normal)
-                        self.searchButton.backgroundColor = UIColor.yellow
-                        self.searchButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
+//                        self.searchButton.setTitle("Search", for: UIControl.State.normal)
+//                        self.searchButton.backgroundColor = UIColor.yellow
+//                        self.searchButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
                         
                         self.performSegue(withIdentifier: "moviesSegue", sender: self)
                         

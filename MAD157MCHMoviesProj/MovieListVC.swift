@@ -82,11 +82,11 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
            
         var mRow = movieArrayTupSorted2[indexPath.row]
             
-        var key = Array(self.movieDictionary8.keys)[indexPath.row]
-        var value = Array(self.movieDictionary8.values)[indexPath.row]
+//        var key = Array(self.movieDictionary8.keys)[indexPath.row]
+//        var value = Array(self.movieDictionary8.values)[indexPath.row]
         
-        print("*** key : \(key)")
-        print("*** value: \(value)")
+//        print("*** key : \(key)")
+//        print("*** value: \(value)")
         
         print("*** mRow: \(mRow)")
             
