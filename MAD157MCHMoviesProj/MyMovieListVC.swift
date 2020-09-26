@@ -85,6 +85,8 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
                 cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle,reuseIdentifier: cellID) as! MyMoviesTableViewCell
                 }
                 
+            
+        
             var key = Array(self.movieDictionary.keys)[indexPath.row]
             var value = Array(self.movieDictionary.values)[indexPath.row]
             

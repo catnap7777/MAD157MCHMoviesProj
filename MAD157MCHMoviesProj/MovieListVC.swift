@@ -20,6 +20,8 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     var movieArray8 = ["movieArray8 first value"]
     
+    var movieArrayTupSorted2: [(xName: String, xYear: String, xType: String, xIMDB: String, xPoster: String)] = [("","","","","")]
+    
     var movieDictionary8: [String : (mYear: String, mType: String, mIMDB: String, mPoster: String)] = [:]
     
     let imageArray = ["hp.jpg",
@@ -51,6 +53,7 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         finalName = finalName.uppercased()
         labelName.text = "\"" + finalName + "\"" + " Movies"
         
+        print("&&&&&& movieArrayTupSorted2 = \(movieArrayTupSorted2)")
         
         //.. from https://www.raywenderlich.com/8549-self-sizing-table-view-cells
 //        movieTable.rowHeight = UITableView.automaticDimension
@@ -60,7 +63,8 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     func tableView( _ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             
-            return movieDictionary8.count
+            //return movieDictionary8.count
+            return movieArrayTupSorted2.count
         }
         
     func tableView( _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -76,23 +80,29 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     //        var sortedMovieDictionary8 = self.movieDictionary8.sorted(by: {$0.value.mYear < $1.value.mYear})
     //        print("\nSortedMovieDictionary = \n \(sortedMovieDictionary8)")
            
+        var mRow = movieArrayTupSorted2[indexPath.row]
             
         var key = Array(self.movieDictionary8.keys)[indexPath.row]
         var value = Array(self.movieDictionary8.values)[indexPath.row]
         
         print("*** key : \(key)")
         print("*** value: \(value)")
+        
+        print("*** mRow: \(mRow)")
             
             //cell.mainText?.text = movieDictionary8.keys[indexPath.row]
     //        cell.mainText?.text = d[indexPath.row]
             
-            
-        cell.mainText?.text = key
-        cell.subText?.text = value.mYear
+        cell.mainText?.text = mRow.xName
+        cell.subText?.text = mRow.xYear
+        
+//        cell.mainText?.text = key
+//        cell.subText?.text = value.mYear
         //cell.imageView?.image = UIImage(named: imageArray[indexPath.row])
         
         //self.setImage(from: url)
-        let url = value.mPoster
+        //let url = value.mPoster
+        let url = mRow.xPoster
         print("value of url ==== \(url)")
         //self.setImage(from: url)
         
@@ -176,21 +186,29 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             let selectedRow = sender as? Int
             print("selected row --->>>>> \(selectedRow)")
             
-            var key2 = Array(self.movieDictionary8.keys)[selectedRow ?? 0]
-            var value2 = Array(self.movieDictionary8.values)[selectedRow ?? 0]
+            var mRowSelected = movieArrayTupSorted2[selectedRow ?? 0]
             
-            print("key2 --->>>>>>> \(key2)")
-            print("value2 --->>>>>>>> \(value2)")
+//            var key2 = Array(self.movieDictionary8.keys)[selectedRow ?? 0]
+//            var value2 = Array(self.movieDictionary8.values)[selectedRow ?? 0]
+//
+//            print("key2 --->>>>>>> \(key2)")
+//            print("value2 --->>>>>>>> \(value2)")
             
             //.. if you used a func to pass data instead... but not necessary here
             //vc.setMovieDetail(fTitle: key2)
             var vc = segue.destination as! MovieDetailVC
             
-            vc.movieTitle = key2
-            vc.movieYear = value2.mYear
-            vc.movieType = value2.mType
-            vc.movieIMDB = value2.mIMDB
-            vc.moviePoster = value2.mPoster
+            vc.movieTitle = mRowSelected.xName
+            vc.movieYear = mRowSelected.xYear
+            vc.movieType = mRowSelected.xType
+            vc.movieIMDB = mRowSelected.xIMDB
+            vc.moviePoster = mRowSelected.xPoster
+            
+//            vc.movieTitle = key2
+//            vc.movieYear = value2.mYear
+//            vc.movieType = value2.mType
+//            vc.movieIMDB = value2.mIMDB
+//            vc.moviePoster = value2.mPoster
             
         }
 

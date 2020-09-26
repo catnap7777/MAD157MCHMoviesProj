@@ -15,6 +15,8 @@ class SearchVC: UIViewController {
     
     var movieArray7: [String] = []
     
+    var movieArrayTup: [(xName: String, xYear: String, xType: String, xIMDB: String, xPoster: String)] = [("","","","","")]
+    
     var movieDictionary7: [String : (mYear: String, mType: String, mIMDB: String, mPoster: String)] = [:]
     
     var searchText = ""
@@ -94,6 +96,19 @@ class SearchVC: UIViewController {
             
     //        print("sortedMovieDictionary going out... count = \(sortedMovieDictionary7.count) :\n \(sortedMovieDictionary7)")
     //        vc.kamSetDictionary(movieDictionary: sortedMovieDictionary7)
+        
+        //.. array stuff
+        //myArray.sort{ $0.1 != $1.1 ? $0.1 > $1.1 : $0.0 < $1.0 }
+        //let movieArrayTupSorted: [(String, String, String, String, String)] =
+//        let movieArrayTupSorted: () = movieArrayTup.sort{ $0.1 != $1.1 ? $0.1 > $1.1 : $0.0 < $1.0 }
+        
+        let movieArrayTupSorted = movieArrayTup.sorted { $0.1 > $1.1 }
+       
+       
+        print("$$$$$$$$$ movieArrayTup = \(movieArrayTup)")
+        print("$$$$$$$$$ movieArrayTupSorted = \(movieArrayTupSorted)")
+        
+        vc.movieArrayTupSorted2 = movieArrayTupSorted
             
             
         }
@@ -163,6 +178,7 @@ class SearchVC: UIViewController {
               
                 self.movieArray7.removeAll()
                 self.movieDictionary7.removeAll()
+                self.movieArrayTup.removeAll()
                
                 //print("\n******* movieArray7 before task = \n\(movieArray7.count)")
                 
@@ -211,6 +227,7 @@ class SearchVC: UIViewController {
                        
                             //self.movieArray4.append([t, y, typ, i, p])
                             self.movieArray7.append(t)
+                            self.movieArrayTup.append((xName: t, xYear: y, xType: typ, xIMDB: i, xPoster: p))
                             
                             self.movieDictionary7[t] = (mYear: y, mType: typ, mIMDB: i, mPoster: p)
                            
