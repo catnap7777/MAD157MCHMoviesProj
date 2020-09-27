@@ -30,9 +30,12 @@ class MovieDetailVC: UIViewController {
     //.. NOTE: complex dictionary objects (objects with key:tuple - called CFType) cannot be saved in a plist
     //..  This movieDictionary is for the plist
     var movieDictionary: [String : String] = [:]
+    var mymovies = [
+        PlistStuff2.MyMovie(name: "", year: "", type: "", imdb: "", poster: "")
+    ]
     
     //.. instantiate plist class
-    let myPlist = PlistStuff()
+    let myPlist = PlistStuff2()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,17 +46,19 @@ class MovieDetailVC: UIViewController {
         //.. try to load existing plist... if it doesn't exist, "save"/create it
         do {
             //.. try to load
-            let dictionaryload = try myPlist.loadPropertyList()
-        
+            let mymovies = try myPlist.loadPropertyList()
+            print("$$$ MovieDetailVC - mymovies plist load attempt - \(mymovies)")
             } catch {
                     //.. if not loaded (ie. not found bc it's new), try to save a new one
                     do {
-                        var dictionaryInitSave = try myPlist.savePropertyList(movieDictionary) }
+                        var dictionaryInitSave = try myPlist.savePropertyList(mymovies)
+                        print("$$$ MovieDetailVC - mymovies plist save attempt - \(mymovies)")
+                    }
                         catch {
-                            print("..tried to save a 'new' plist but it didn't work")
+                            print("$$$ MovieDetailVC ..tried to save a 'new' plist but it didn't work")
                     }
                     print(error)
-                    print(".. tried to load an existing plist but it didn't load or wasn't there")
+                    print("$$$ MovieDetailVC.. tried to load an existing plist but it didn't load or wasn't there")
                 }
         
         //testLabel.text = testString
@@ -96,11 +101,18 @@ class MovieDetailVC: UIViewController {
 //            dictionary2.removeAll()
             
             //.. remove bogus key that was initially added if new plist created in viewDidLoad
-            dictionary2.removeValue(forKey: "movie1")
+            //dictionary2.removeValue(forKey: "movie1")
             //.. add the new movie
-            dictionary2.updateValue(movieYear, forKey: movieTitle)
+            //dictionary2.updateValue(movieYear, forKey: movieTitle)
+            mymovies.append(PlistStuff2.MyMovie(name: movieTitle, year: movieYear, type: movieType, imdb: movieIMDB, poster: moviePoster))
             //.. save the plist
-            try myPlist.savePropertyList(dictionary2)
+            do {
+                try myPlist.savePropertyList(mymovies)
+                print("$$$ MovieDetailVC - mymovies plist save attempt - \(mymovies)")
+            } catch {
+                 print("$$$ MovieDetailVC ..tried to save plist but it didn't work")
+                print("$$$ MovieDetailVC - mymovies plist save attempt - \(mymovies)")
+            }
             //.. if it saved, show an alert
             let alert = UIAlertController(title: "Message", message: "Movie Saved to My Movies :)", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: .default, handler: { action -> Void in
@@ -111,7 +123,7 @@ class MovieDetailVC: UIViewController {
             
             } catch {
                 print(error)
-                print("nope... did NOT save/update plist with 'new' movie... why not?")
+                print("$$$ MovieDetailVC.. nope... did NOT save/update plist with 'new' movie... why not?")
             }
     }
  

@@ -18,10 +18,17 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     var mmArray: [(mmName: String, mmYear: String)] = [("","")]
     var mmArraySorted: [(mmName: String, mmYear: String)] = [("","")]
     
+    var mymovies = [
+        PlistStuff2.MyMovie(name: "", year: "", type: "", imdb: "", poster: "")
+    ]
+    var mymoviesSorted = [
+        PlistStuff2.MyMovie(name: "", year: "", type: "", imdb: "", poster: "")
+    ]
+    
     let cellID = "cellID"
     
     //.. instantiate plist class
-    let myPlist = PlistStuff()
+    let myPlist = PlistStuff2()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +42,12 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         do {
             //.. try to load
             let dictionaryload = try myPlist.loadPropertyList()
-            movieDictionary = dictionaryload
+            mymovies = dictionaryload
         
             } catch {
                     //.. if not loaded (ie. not found bc it's new), try to save a new one
                     do {
-                        var dictionaryInitSave = try myPlist.savePropertyList(movieDictionary)
+                        var dictionaryInitSave = try myPlist.savePropertyList(mymovies)
                         } catch {
                             print("..tried to save a 'new' plist but it didn't work")
                         }
@@ -55,12 +62,13 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         do {
             //.. try to load
             let dictionaryload2 = try myPlist.loadPropertyList()
-            movieDictionary = dictionaryload2
+            mymovies = dictionaryload2
+            print("****** mymovies = \(mymovies)")
         
             } catch {
                     //.. if not loaded (ie. not found bc it's new), try to save a new one
                     do {
-                        var dictionaryInitSave = try myPlist.savePropertyList(movieDictionary)
+                        var dictionaryInitSave = try myPlist.savePropertyList(mymovies)
                         } catch {
                             print("..tried to save a 'new' plist but it didn't work")
                         }
@@ -72,7 +80,7 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movieDictionary.count
+        return mymovies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -84,15 +92,15 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
                 cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle,reuseIdentifier: cellID) as! MyMoviesTableViewCell
                 }
                 
-            mmArray.removeAll()
-            
-            for (k,v) in movieDictionary {
-                mmArray.append((mmName: k, mmYear: v))
-            }
+//            mymovies.removeAll()
+
+//            for (k,v) in mymovies {
+//                mmArray.append((mmName: k, mmYear: v))
+//            }
         
-            mmArraySorted = mmArray.sorted { $0.0 < $1.0 }
+            //mymoviesSorted = mymovies.sorted { $0.0 < $1.0 }
         
-        let mmRow = mmArraySorted[indexPath.row]
+        let mmRow = mymovies[indexPath.row]
         
         //.. if using a dictionary instead of an array
 //            var key = Array(self.movieDictionary.keys)[indexPath.row]
@@ -100,8 +108,8 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
 //            cell.myMovieName?.text = key
 //            cell.myMovieYear?.text = value
                 
-            cell.myMovieName?.text = mmRow.mmName
-            cell.myMovieYear?.text = mmRow.mmYear
+            cell.myMovieName?.text = mmRow.name
+            cell.myMovieYear?.text = mmRow.year
             
             return cell
     }
@@ -111,9 +119,10 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
 
             //let selectedItem = movieArray8[indexPath.row]
         
-        let mmRowSelected = mmArraySorted[indexPath.row]
-        let movieKeySelected = mmRowSelected.mmName
-        let movieValueSelected = mmRowSelected.mmYear
+        let mmRowSelected = mymoviesSorted[indexPath.row]
+        let movieKeySelected = mmRowSelected.name
+        let movieValueSelected = mmRowSelected.year
+        
         
         //.. if using a dictionary instead of an array
 //        var movieKeySelected = Array(self.movieDictionary.keys)[indexPath.row]
