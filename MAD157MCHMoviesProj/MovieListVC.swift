@@ -31,6 +31,9 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         finalName = finalName.uppercased()
         labelName.text = "\"" + finalName + "\"" + " Movies"
         
+        //..tableView.rowHeight = 40
+        movieTable.rowHeight = 145
+        
     }
     
     func tableView( _ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,6 +57,8 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         cell.mainText?.text = mRow.xName
         cell.subText?.text = mRow.xYear
         cell.typeText?.text = mRow.xType
+        
+    
         
             
         //.. if using a dictionary instead
