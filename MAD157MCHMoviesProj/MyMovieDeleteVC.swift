@@ -16,9 +16,17 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     
     //.. NOTE: complex dictionary objects (objects with key:tuple - called CFType) cannot be saved in a plist
     //..  This movieDictionary is for the plist
-    var movieDictionary: [String : String] = [:]
-    var moviePickerData: [String] = [String]() //.. string array of movie names
+    //var movieDictionary: [String : String] = [:]
+    //var moviePickerData: [String] = [String]() //.. string array of movie names
+    //var moviePickerData2: [(name: String, year: String, type: String, imdb: String)] = [(name: "", year: "", type: "", imdb: "")]
+    
     var myMovieChosen: String = ""
+    var myMovieIMDBChosen: String = ""
+    var myMovieTypeChosen: String = ""
+    var myMovieYearChosen: String = ""
+    var myMoviePosterChosen: String = ""
+    
+    var myPickerTypeIndex = 0
     
     var mymovies = [
         PlistStuff2.MyMovie(name: "", year: "", type: "", imdb: "", poster: "")
@@ -34,6 +42,9 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
             
         myMoviePicker.dataSource = self
         myMoviePicker.delegate = self
+        
+        //moviePickerData2.removeAll()
+        mymovies.removeAll()
         
 //        //.. make sure correct movie array is built
 //        self.moviePickerData.removeAll()
@@ -75,7 +86,11 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     
     override func viewDidAppear(_ animated: Bool) {
         
-        moviePickerData.removeAll()
+        //moviePickerData.removeAll()
+        //moviePickerData2.removeAll()
+        mymovies.removeAll()
+        
+        
         
         //.. make sure correct movie array is built
         //.. try to load existing plist... if it doesn't exist, "save"/create it
@@ -85,19 +100,22 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
             //movieDictionary = dictionaryload
             mymovies = dictionaryload
             
-            for item in mymovies {
-                moviePickerData.append(item.name)
-            }
+//            for item in mymovies {
+//                moviePickerData2.append((item.name, item.year, item.type, item.imdb))
+//            }
+            
+            
+            
 //            for (k,v) in movieDictionary {
 //                moviePickerData.append(k)
 //            }
             
-            moviePickerData.sort(by: <)
+            //moviePickerData.sort(by: <)
         
             } catch {
                     //.. if not loaded (ie. not found bc it's new), try to save a new one
                     do {
-                        var dictionaryInitSave = try myPlist.savePropertyList(movieDictionary)
+                        var dictionaryInitSave = try myPlist.savePropertyList(mymovies)
                         } catch {
                             print("..tried to save a 'new' plist but it didn't work")
                         }
@@ -108,9 +126,12 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
 //        for (k,v) in self.movieDictionary {
 //            self.moviePickerData.append(k)
 //        }
-//        moviePickerData.sort(by: <)
+        //moviePickerData2.sort(by: <)
         self.myMoviePicker.reloadAllComponents()
         self.myMoviePicker.reloadComponent(0)
+//        self.myMoviePicker.reloadAllComponents()
+//        self.myMoviePicker.reloadComponent(0)
+        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -118,15 +139,23 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return moviePickerData.count
+        return mymovies.count
+//        return moviePickerData2.count
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
         let pickerLabel = UILabel()
+        
+        myMovieChosen = mymovies[0].name
+        myMovieYearChosen = mymovies[0].year
+        myMovieTypeChosen = mymovies[0].type
+        myMovieIMDBChosen = mymovies[0].imdb
             
-        pickerLabel.text = moviePickerData[row]
-        print("pickerlabel \(pickerLabel.text) - \(moviePickerData[row])")
+        pickerLabel.text = mymovies[row].name
+        print("pickerlabel \(pickerLabel.text) - \(mymovies[row].name)")
+//        pickerLabel.text = moviePickerData2[row].name
+//        print("pickerlabel \(pickerLabel.text) - \(moviePickerData2[row].name)")
             
         if UIDevice.current.userInterfaceIdiom == .pad {
             pickerLabel.font = UIFont.systemFont(ofSize: 18)
@@ -143,15 +172,28 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         let pickerTypeIndex = myMoviePicker.selectedRow(inComponent: 0)
+        //myPickerTypeIndex = pickerTypeIndex
         
-        myMovieChosen = moviePickerData[pickerTypeIndex]
+        myMovieChosen = mymovies[pickerTypeIndex].name
+        myMovieYearChosen = mymovies[pickerTypeIndex].year
+        myMovieTypeChosen = mymovies[pickerTypeIndex].type
+        myMovieIMDBChosen = mymovies[pickerTypeIndex].imdb
+//        myMovieChosen = moviePickerData2[pickerTypeIndex].name
+//        myMovieYearChosen = moviePickerData2[pickerTypeIndex].year
+//        myMovieTypeChosen = moviePickerData2[pickerTypeIndex].type
+//        myMovieIMDBChosen = moviePickerData2[pickerTypeIndex].imdb
+        
         //print("myMovieChosen = \(myMovieChosen)")
     }
 
     
     @IBAction func deleteMyMoviePressed(_ sender: Any) {
         
-    let alert = UIAlertController(title: "Confirm", message: "Are you sure you want to delete this movie?? - \(myMovieChosen)", preferredStyle: .alert)
+    let msg = "Are you sure you want to delete... \n- Movie: \(myMovieChosen) \n- Year:\(myMovieYearChosen) \n- Type:\(myMovieTypeChosen) \n- Imdb:\(myMovieIMDBChosen)???"
+        
+    let alert = UIAlertController(title: "Confirm", message: msg, preferredStyle: .alert)
+//
+//     let alert = UIAlertController(title: "Confirm", message: "Are you sure you want to delete this movie?? - \(myMovieChosen) - \n\(myMovieYearChosen) - \(myMovieTypeChosen) - \n\(myMovieIMDBChosen)", preferredStyle: .alert)
         
     let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { action -> Void in
         //Just dismiss the action sheet
@@ -160,17 +202,26 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     let okAction = UIAlertAction(title: "Delete", style: .default, handler: { action -> Void in
         
         //.. remove the key
-        print("movie to delete = \(self.myMovieChosen)")
-        self.movieDictionary.removeValue(forKey: self.myMovieChosen)
+        print("movie to delete = \(self.myMovieChosen)  \(self.myMovieIMDBChosen)")
+        //self.movieDictionary.removeValue(forKey: self.myMovieChosen)
+        //*************************************
+        self.mymovies.remove(at: self.myPickerTypeIndex)
+        
+        //self.mymovies[indexPath.row].year = ("\(savedYear) - \(savedText2)")
+        
         //.. save the plist
         do {
-            try self.myPlist.savePropertyList(self.movieDictionary)
+            try self.myPlist.savePropertyList(self.mymovies)
             //.. make sure correct movie array is built
-            self.moviePickerData.removeAll()
-            for (k,v) in self.movieDictionary {
-                self.moviePickerData.append(k)
-            }
-            self.moviePickerData.sort(by: <)
+            
+//            self.moviePickerData2.removeAll()
+//            for item in self.mymovies {
+//                self.moviePickerData2.append((item.name, item.year, item.type, item.imdb))
+//            }
+            
+            //self.moviePickerData2.remove(at: self.myPickerTypeIndex)
+            //**** sort may actually be the problem
+            //self.moviePickerData2.sort(by: <)
             self.myMoviePicker.reloadAllComponents()
             self.myMoviePicker.reloadComponent(0)
             self.myView.reloadInputViews()
