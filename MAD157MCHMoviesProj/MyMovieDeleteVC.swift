@@ -19,9 +19,13 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     var movieDictionary: [String : String] = [:]
     var moviePickerData: [String] = [String]() //.. string array of movie names
     var myMovieChosen: String = ""
+    
+    var mymovies = [
+        PlistStuff2.MyMovie(name: "", year: "", type: "", imdb: "", poster: "")
+    ]
 
     //.. instantiate plist class
-    let myPlist = PlistStuff()
+    let myPlist = PlistStuff2()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,11 +82,15 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         do {
             //.. try to load
             let dictionaryload = try myPlist.loadPropertyList()
-            movieDictionary = dictionaryload
+            //movieDictionary = dictionaryload
+            mymovies = dictionaryload
             
-            for (k,v) in movieDictionary {
-                moviePickerData.append(k)
+            for item in mymovies {
+                moviePickerData.append(item.name)
             }
+//            for (k,v) in movieDictionary {
+//                moviePickerData.append(k)
+//            }
             
             moviePickerData.sort(by: <)
         
