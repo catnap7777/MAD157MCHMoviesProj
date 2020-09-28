@@ -161,8 +161,10 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
             
             //.. reset the picker to the first row of mymovies now that a row has been deleted
             self.pickerLabel.text = self.mymovies[0].name
+            
             //.. redisplay the "newly updated" picker (since a row was deleted)
             self.myMoviePicker.reloadAllComponents()
+            self.myView.reloadInputViews()
             
             //.. save the plist
             do {
