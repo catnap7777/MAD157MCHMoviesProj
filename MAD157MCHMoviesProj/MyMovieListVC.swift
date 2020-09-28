@@ -119,9 +119,11 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
 
             //let selectedItem = movieArray8[indexPath.row]
         
-        let mmRowSelected = mymoviesSorted[indexPath.row]
+        
+        //********* maybe use same type of code in MovieDetailVC
+        var mmRowSelected = mymovies[indexPath.row]
         let movieKeySelected = mmRowSelected.name
-        let movieValueSelected = mmRowSelected.year
+        var movieValueSelected = mmRowSelected.year
         
         
         //.. if using a dictionary instead of an array
@@ -156,10 +158,15 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             
                 //.. add the new movie with updated "year/comment" to the dictionary
                 self.movieDictionary.updateValue("\(savedYear) - \(savedText2)", forKey: movieKeySelected)
+        
+                ///IIIIIII how to update mymovies year?????????????
+                //mmRowSelected.year = ("\(savedYear) - \(savedText2)")
+                self.mymovies[indexPath.row].year = ("\(savedYear) - \(savedText2)")
                 
                 //.. save the plist
                 do {
-                    try self.myPlist.savePropertyList(self.movieDictionary)
+                    try self.myPlist.savePropertyList(self.mymovies)
+                    //try self.myPlist.savePropertyList(self.movieDictionary)
                     self.myMoviesTableViewObj.reloadData()
                 } catch {
                     print("no way... not happening...")
