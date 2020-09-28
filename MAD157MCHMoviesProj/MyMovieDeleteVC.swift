@@ -38,12 +38,11 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         myMoviePicker.delegate = self
         
         mymovies.removeAll()
-       
         //.. try to load existing plist... if it doesn't exist, "save"/create it
         do {
             //.. try to load
-            let dictionaryPlistLoad = try myPlist.loadPropertyList()
-            mymovies = dictionaryPlistLoad
+            let dictionaryPlistLoad1 = try myPlist.loadPropertyList()
+            mymovies = dictionaryPlistLoad1
             
             mymovies = mymovies.sorted { $0.name < $1.name }
         
@@ -58,35 +57,23 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                     print(".. tried to load an existing plist but it didn't load or wasn't there")
             }
         
-        //        //.. this code is used to set initial values before pickers move
-        //               carColorChosen = pickerColorData[0]  //... electric storm blue should be first
-        //               carTypeChosen = pickerTypeData[0]   //... LE AWD-e should be first
-        //               carTypeDesc = priusModelDictionary[carTypeChosen]?.desc as! String
-        //               carTypePrice = priusModelDictionary[carTypeChosen]?.price as! Double
-        //               priusColorPict.image = UIImage.init(named: "electricStormBlue.png")
-        //               pictureNameString = "electricStormBlue.png"
-                
+        //.. this code is used to set initial values before pickers move
         myMovieChosen = mymovies[0].name
         myMovieYearChosen = mymovies[0].year
         myMovieTypeChosen = mymovies[0].type
         myMovieIMDBChosen = mymovies[0].imdb
-                
-    
     }
     
     override func viewDidAppear(_ animated: Bool) {
-
-        //moviePickerData.removeAll()
-        //moviePickerData2.removeAll()
 
         mymovies.removeAll()
 
         //.. try to load existing plist... if it doesn't exist, "save"/create it
         do {
             //.. try to load
-            let dictionaryPlistLoad = try myPlist.loadPropertyList()
+            let dictionaryPlistLoad2 = try myPlist.loadPropertyList()
             //movieDictionary = dictionaryload
-            mymovies = dictionaryPlistLoad
+            mymovies = dictionaryPlistLoad2
 
             mymovies = mymovies.sorted { $0.name < $1.name }
 
@@ -101,23 +88,13 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                     print(".. tried to load an existing plist but it didn't load or wasn't there")
             }
 
-        //        //.. this code is used to set initial values before pickers move
-        //               carColorChosen = pickerColorData[0]  //... electric storm blue should be first
-        //               carTypeChosen = pickerTypeData[0]   //... LE AWD-e should be first
-        //               carTypeDesc = priusModelDictionary[carTypeChosen]?.desc as! String
-        //               carTypePrice = priusModelDictionary[carTypeChosen]?.price as! Double
-        //               priusColorPict.image = UIImage.init(named: "electricStormBlue.png")
-        //               pictureNameString = "electricStormBlue.png"
-
+        //.. this code is used to set initial values before pickers move
         myMovieChosen = mymovies[0].name
         myMovieYearChosen = mymovies[0].year
         myMovieTypeChosen = mymovies[0].type
         myMovieIMDBChosen = mymovies[0].imdb
 
         self.myMoviePicker.reloadAllComponents()
-//        self.myMoviePicker.reloadComponent(0)
-//        self.myView.reloadInputViews()
-        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -132,14 +109,7 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         
         pickerLabel = UILabel()
     
-        //mymovies = mymovies.sorted { $0.name < $1.name } - not here because sorting for each row in picker being built
-        
         pickerLabel.text = mymovies[row].name
-        
-//        myMovieChosen = mymovies[row].name
-//        myMovieYearChosen = mymovies[row].year
-//        myMovieTypeChosen = mymovies[row].type
-//        myMovieIMDBChosen = mymovies[row].imdb
         
         print("pickerlabel \(pickerLabel.text) - \(mymovies[row].name)")
 
@@ -159,6 +129,7 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         
         pickerTypeIndex = myMoviePicker.selectedRow(inComponent: 0)
         
+        //.. set the values for the picker row chosen so they can be displayed in the alert
         myMovieChosen = mymovies[pickerTypeIndex].name
         myMovieYearChosen = mymovies[pickerTypeIndex].year
         myMovieTypeChosen = mymovies[pickerTypeIndex].type
@@ -178,32 +149,24 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         let okAction = UIAlertAction(title: "Delete", style: .default, handler: { action -> Void in
             
             //.. remove the key
-            print("movie to delete = \(self.myMovieChosen)  \(self.myMovieIMDBChosen)")
+            //print("movie to delete = \(self.myMovieChosen)  \(self.myMovieIMDBChosen)")
             
             //*********
-            print("$$$ mymovies BEFORE key removed = \(self.mymovies)")
+            //print("$$$ mymovies BEFORE key removed = \(self.mymovies)")
             self.mymovies.remove(at: self.pickerTypeIndex)
-            print("$$$ mymovies AFTER key removed = \(self.mymovies)")
+            //print("$$$ mymovies AFTER key removed = \(self.mymovies)")
             
             self.mymovies = self.mymovies.sorted { $0.name < $1.name }
-            print("$$$ mymovies AFTER key removed and after SORT = \(self.mymovies)")
+            //print("$$$ mymovies AFTER key removed and after SORT = \(self.mymovies)")
             
-            //*** this is where I think I need to redisplay the row
-            
+            //.. reset the picker to the first row of mymovies now that a row has been deleted
             self.pickerLabel.text = self.mymovies[0].name
-            
+            //.. redisplay the "newly updated" picker (since a row was deleted)
             self.myMoviePicker.reloadAllComponents()
-//            self.myMoviePicker.reloadComponent(0)
-//            self.myView.reloadInputViews()
             
             //.. save the plist
             do {
                 try self.myPlist.savePropertyList(self.mymovies)
-                
-//                //****** should you be doing this here?
-//                self.myMoviePicker.reloadAllComponents()
-//                self.myMoviePicker.reloadComponent(0)
-//                self.myView.reloadInputViews()
             } catch {
                 print("..not able to resave plist after attempted delete..")
             }
@@ -212,11 +175,6 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         self .present(alert, animated: true, completion: nil )
-        
-//        //*** this is where I think I need to redisplay the row
-//        self.myMoviePicker.reloadAllComponents()
-//        self.myMoviePicker.reloadComponent(0)
-//        self.myView.reloadInputViews()
         
     }
     
