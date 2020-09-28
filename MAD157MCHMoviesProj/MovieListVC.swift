@@ -58,9 +58,6 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         cell.subText?.text = mRow.xYear
         cell.typeText?.text = mRow.xType
         
-    
-        
-            
         //.. if using a dictionary instead
 //        var key = Array(self.movieDictionary8.keys)[indexPath.row]
 //        var value = Array(self.movieDictionary8.values)[indexPath.row]
@@ -104,7 +101,6 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             print("You tapped cell number \(indexPath.row).")
-
             self.performSegue(withIdentifier: "movieDetailSegue", sender: indexPath.row)
            
         }

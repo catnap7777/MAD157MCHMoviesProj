@@ -16,7 +16,6 @@
 		3A845541251BE5F50040877A /* tygermatrix303.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A845540251BE5F50040877A /* tygermatrix303.png */; };
 		3A845543251BE5FD0040877A /* popcorn2_wo_middle3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A845542251BE5FD0040877A /* popcorn2_wo_middle3.jpg */; };
 		3A845545251BE6070040877A /* popcorn2_wo_middle5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A845544251BE6070040877A /* popcorn2_wo_middle5.jpg */; };
-		3A84556C251D3AF10040877A /* PlistStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A84556B251D3AF10040877A /* PlistStuff.swift */; };
 		3AA0CEEC251AA50800239261 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0CEEB251AA50800239261 /* AppDelegate.swift */; };
 		3AA0CEEE251AA50800239261 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0CEED251AA50800239261 /* SceneDelegate.swift */; };
 		3AA0CEF3251AA50800239261 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA0CEF1251AA50800239261 /* Main.storyboard */; };
@@ -43,7 +42,6 @@
 		3A845540251BE5F50040877A /* tygermatrix303.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tygermatrix303.png; sourceTree = "<group>"; };
 		3A845542251BE5FD0040877A /* popcorn2_wo_middle3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = popcorn2_wo_middle3.jpg; sourceTree = "<group>"; };
 		3A845544251BE6070040877A /* popcorn2_wo_middle5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = popcorn2_wo_middle5.jpg; sourceTree = "<group>"; };
-		3A84556B251D3AF10040877A /* PlistStuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistStuff.swift; sourceTree = "<group>"; };
 		3AA0CEE8251AA50800239261 /* MAD157MCHMoviesProj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAD157MCHMoviesProj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AA0CEEB251AA50800239261 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3AA0CEED251AA50800239261 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 				3AA0CF19251BAAED00239261 /* pearl.jpg */,
 				3AA0CF1B251BAB2300239261 /* gitcat.jpg */,
 				3AA0CEF6251AA50A00239261 /* LaunchScreen.storyboard */,
-				3A84556B251D3AF10040877A /* PlistStuff.swift */,
 				3A5C0FC825203AC9008E0AED /* PlistStuff2.swift */,
 				3AA0CEF9251AA50A00239261 /* Info.plist */,
 			);
@@ -200,7 +197,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A84556C251D3AF10040877A /* PlistStuff.swift in Sources */,
 				3AA0CF02251AA8EA00239261 /* SearchVC.swift in Sources */,
 				3A50DA00251EA58200403D4F /* MyMovieDeleteVC.swift in Sources */,
 				3A50D9FC251E6A6700403D4F /* MyMoviesTableViewCell.swift in Sources */,

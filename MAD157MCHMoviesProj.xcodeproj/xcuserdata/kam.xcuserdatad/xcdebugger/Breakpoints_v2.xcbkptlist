@@ -7,207 +7,31 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DFD18AAD-45D7-4511-B718-EAD5CD099E0E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MAD157MCHMoviesProj/PlistStuff2.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "savePropertyList(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E6EE2560-C822-4017-B58F-1F9B8D707701"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MAD157MCHMoviesProj/PlistStuff2.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "savePropertyList(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8C18F233-2E71-41FB-842F-7BFE44E11887"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MAD157MCHMoviesProj/MyMovieListVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "02476366-A4F5-4B98-82C3-38B1BC82072F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MAD157MCHMoviesProj/MyMovieListVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F67E39F5-BC1F-453F-B91E-E0F9B23C4205"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MAD157MCHMoviesProj/MyMovieListVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F00E47AD-2776-4644-B79C-D896E8BFD6AD"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MAD157MCHMoviesProj/MovieDetailVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E0EBB68A-933E-4829-94B3-043B3AA89920"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MAD157MCHMoviesProj/PlistStuff2.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "loadPropertyList()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2792CB62-F06F-4DC1-BB49-4B9F50592066"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MAD157MCHMoviesProj/PlistStuff2.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "loadPropertyList()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2F3334AC-C97A-4D34-A590-20F133E6C134"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MAD157MCHMoviesProj/PlistStuff2.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "loadPropertyList()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2F3334AC-C97A-4D34-A590-20F133E6C134 - 96c50d79c8852ff"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MAD157MCHMoviesProj.PlistStuff2.loadPropertyList() throws -&gt; Swift.Array&lt;MAD157MCHMoviesProj.PlistStuff2.MyMovie&gt;"
-                  moduleName = "MAD157MCHMoviesProj"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kam/Documents/MAD157/MAD157%20Swift_Projects/MAD157MCHMoviesProj/MAD157MCHMoviesProj/PlistStuff2.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "73"
-                  endingLineNumber = "73"
-                  offsetFromSymbolStart = "102">
-               </Location>
-               <Location
-                  uuid = "2F3334AC-C97A-4D34-A590-20F133E6C134 - 96c50d79c8852ff"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MAD157MCHMoviesProj.PlistStuff2.loadPropertyList() throws -&gt; Swift.Array&lt;MAD157MCHMoviesProj.PlistStuff2.MyMovie&gt;"
-                  moduleName = "MAD157MCHMoviesProj"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kam/Documents/MAD157/MAD157%20Swift_Projects/MAD157MCHMoviesProj/MAD157MCHMoviesProj/PlistStuff2.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "242">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "33C5EA5A-F189-41CA-A02D-91E3AB408299"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MAD157MCHMoviesProj/PlistStuff2.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "loadPropertyList()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6314E78A-C8FA-4C05-9A55-537C55964467"
-            shouldBeEnabled = "Yes"
+            uuid = "CA1EBC08-DE25-473C-BF8F-0DD9976E5B23"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MAD157MCHMoviesProj/MyMovieDeleteVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "pickerView(_:viewForRow:forComponent:reusing:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "06F5EEF9-100A-4316-A10C-25B29B7C7557"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MAD157MCHMoviesProj/MyMovieDeleteVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "pickerView(_:didSelectRow:inComponent:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -215,15 +39,31 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2CA8838F-442E-444A-943A-398BDB8B67E4"
-            shouldBeEnabled = "Yes"
+            uuid = "AD5F68FC-B0D0-4894-85CA-0C114CDDCF29"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MAD157MCHMoviesProj/MyMovieDeleteVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "pickerView(_:didSelectRow:inComponent:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1800FA41-83E7-4B72-9564-0847171F7D4C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MAD157MCHMoviesProj/MyMovieDeleteVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "deleteMyMoviePressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -231,33 +71,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "224DFFB5-68C7-4093-BB67-AC27BBFB037C"
-            shouldBeEnabled = "Yes"
+            uuid = "B5C09E06-3847-4AE3-896F-C2E2DAD7B115"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MAD157MCHMoviesProj/MyMovieDeleteVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "deleteMyMoviePressed(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "50AF6C5D-BFA7-4D48-89D0-033EA90F612E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MAD157MCHMoviesProj/MyMovieDeleteVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
-            landmarkName = "deleteMyMoviePressed(_:)"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B5C09E06-3847-4AE3-896F-C2E2DAD7B115 - 394c7f686b959126"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.UIAlertAction) -&gt; () in MAD157MCHMoviesProj.MyMovieDeleteVC.deleteMyMoviePressed(Any) -&gt; ()"
+                  moduleName = "MAD157MCHMoviesProj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kam/Documents/MAD157/MAD157%20Swift_Projects/MAD157MCHMoviesProj/MAD157MCHMoviesProj/MyMovieDeleteVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "186"
+                  endingLineNumber = "186"
+                  offsetFromSymbolStart = "2213">
+               </Location>
+               <Location
+                  uuid = "B5C09E06-3847-4AE3-896F-C2E2DAD7B115 - c8e73cfd6c3ce3b6"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (MAD157MCHMoviesProj.PlistStuff2.MyMovie, MAD157MCHMoviesProj.PlistStuff2.MyMovie) -&gt; Swift.Bool in closure #2 (__C.UIAlertAction) -&gt; () in MAD157MCHMoviesProj.MyMovieDeleteVC.deleteMyMoviePressed(Any) -&gt; ()"
+                  moduleName = "MAD157MCHMoviesProj"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kam/Documents/MAD157/MAD157%20Swift_Projects/MAD157MCHMoviesProj/MAD157MCHMoviesProj/MyMovieDeleteVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "186"
+                  endingLineNumber = "186"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
