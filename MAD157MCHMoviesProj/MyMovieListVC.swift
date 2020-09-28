@@ -99,8 +99,14 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
 //            }
         
             //mymoviesSorted = mymovies.sorted { $0.0 < $1.0 }
+//        mymoviesSorted = mymovies.sorted { $0.name < $1.name }
+        mymovies = mymovies.sorted { $0.name < $1.name }
         
+//        let mmRow = mymoviesSorted[indexPath.row]
         let mmRow = mymovies[indexPath.row]
+        
+        //****** may try sort here
+        
         
         //.. if using a dictionary instead of an array
 //            var key = Array(self.movieDictionary.keys)[indexPath.row]
