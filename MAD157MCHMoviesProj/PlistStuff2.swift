@@ -85,7 +85,7 @@ class PlistStuff2 {
 //            return [:]
 //        }
         
-        print("!!!!!..movie plist currently has: \(plist)")
+        //print("!!!!!..movie plist currently has: \(plist)")
         return plist
     }
 
