@@ -57,6 +57,10 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                     print(".. tried to load an existing plist but it didn't load or wasn't there")
             }
         
+        //***********************************
+        //.. reset the picker to the first row of mymovies now that a row has been deleted
+        self.pickerLabel.text = self.mymovies[0].name
+        
         //.. this code is used to set initial values before pickers move
         myMovieChosen = mymovies[0].name
         myMovieYearChosen = mymovies[0].year
@@ -87,12 +91,6 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                     print(error)
                     print(".. tried to load an existing plist but it didn't load or wasn't there")
             }
-
-        //.. this code is used to set initial values before pickers move
-        myMovieChosen = mymovies[0].name
-        myMovieYearChosen = mymovies[0].year
-        myMovieTypeChosen = mymovies[0].type
-        myMovieIMDBChosen = mymovies[0].imdb
 
         self.myMoviePicker.reloadAllComponents()
     }
@@ -128,15 +126,22 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         pickerTypeIndex = myMoviePicker.selectedRow(inComponent: 0)
-        
-        //.. set the values for the picker row chosen so they can be displayed in the alert
-        myMovieChosen = mymovies[pickerTypeIndex].name
-        myMovieYearChosen = mymovies[pickerTypeIndex].year
-        myMovieTypeChosen = mymovies[pickerTypeIndex].type
-        myMovieIMDBChosen = mymovies[pickerTypeIndex].imdb
+//        //****************
+//        //.. set the values for the picker row chosen so they can be displayed in the alert
+//        myMovieChosen = mymovies[pickerTypeIndex].name
+//        myMovieYearChosen = mymovies[pickerTypeIndex].year
+//        myMovieTypeChosen = mymovies[pickerTypeIndex].type
+//        myMovieIMDBChosen = mymovies[pickerTypeIndex].imdb
     }
 
     @IBAction func deleteMyMoviePressed(_ sender: Any) {
+        
+        //********* THIS NEEDS TO BE HERE TO GET CORRECT ALERT MSG
+        //.. set the values for the picker row chosen so they can be displayed in the alert
+        self.myMovieChosen = self.mymovies[self.pickerTypeIndex].name
+        self.myMovieYearChosen = self.mymovies[self.pickerTypeIndex].year
+        self.myMovieTypeChosen = self.mymovies[self.pickerTypeIndex].type
+        self.myMovieIMDBChosen = self.mymovies[self.pickerTypeIndex].imdb
         
         let msg = "Are you sure you want to delete... \n- Movie: \(myMovieChosen) \n- Year:\(myMovieYearChosen) \n- Type:\(myMovieTypeChosen) \n- Imdb:\(myMovieIMDBChosen)???"
             
@@ -149,15 +154,15 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         let okAction = UIAlertAction(title: "Delete", style: .default, handler: { action -> Void in
             
             //.. remove the key
-            //print("movie to delete = \(self.myMovieChosen)  \(self.myMovieIMDBChosen)")
+            print("movie to delete = \(self.myMovieChosen)  \(self.myMovieIMDBChosen)")
             
             //*********
-            //print("$$$ mymovies BEFORE key removed = \(self.mymovies)")
+            print("$$$ mymovies BEFORE key removed = \(self.mymovies)")
             self.mymovies.remove(at: self.pickerTypeIndex)
-            //print("$$$ mymovies AFTER key removed = \(self.mymovies)")
+            print("$$$ mymovies AFTER key removed = \(self.mymovies)")
             
             self.mymovies = self.mymovies.sorted { $0.name < $1.name }
-            //print("$$$ mymovies AFTER key removed and after SORT = \(self.mymovies)")
+            print("$$$ mymovies AFTER key removed and after SORT = \(self.mymovies)")
             
             //.. reset the picker to the first row of mymovies now that a row has been deleted
             self.pickerLabel.text = self.mymovies[0].name
