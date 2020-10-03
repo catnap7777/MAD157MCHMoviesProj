@@ -84,7 +84,9 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             }
         }
      
-        cell.imageView?.image = myImage
+        //.. this is referenced in TableViewCell.swift; if you just use cell.imageView?.image (commented out line below), the pictures just "default" to whatever size they come in as
+        cell.cellImage.image = myImage
+        //cell.imageView?.image = myImage
        
         return cell
     }
@@ -152,4 +154,9 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
 //        }
 
 
+    //.. Controls the size of the cell...
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150.0
+    }
+    
 }
