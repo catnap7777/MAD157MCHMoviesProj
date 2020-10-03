@@ -15,36 +15,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVT-Nu-glx">
-                                <rect key="frame" x="36" y="95" width="342" height="39"/>
-                                <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="342" id="0ho-4W-EkC"/>
-                                    <constraint firstAttribute="height" constant="39" id="xsk-vY-RUK"/>
-                                </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="MCH Movies">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="0.0069375394172468408" blue="0.081287042612919636" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <font key="NSFont" size="24" name="Noteworthy-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click on movie to edit..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VyI-Cd-ezq">
-                                <rect key="frame" x="36" y="162.5" width="342" height="20.5"/>
+                                <rect key="frame" x="36" y="106" width="342" height="20.5"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="342" id="aJc-AN-clJ"/>
                                     <constraint firstAttribute="height" constant="20.5" id="ayJ-9j-Jv7"/>
                                     <constraint firstAttribute="width" constant="342" id="msr-vx-Ywi"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20.5" id="tfe-cz-A3f"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K6e-8H-5Xh">
-                                <rect key="frame" x="36" y="193" width="342" height="563"/>
+                                <rect key="frame" x="36" y="136.5" width="342" height="619.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell2" rowHeight="156" id="H5Y-MY-czS" customClass="MyMoviesTableViewCell" customModule="MAD157MCHMoviesProj" customModuleProvider="target">
@@ -107,16 +91,15 @@
                         </subviews>
                         <color key="backgroundColor" red="0.92249954689507074" green="1" blue="0.90573315234745544" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="pVT-Nu-glx" firstAttribute="top" secondItem="5Ce-wQ-MJg" secondAttribute="top" constant="7" id="1ZD-gk-at5"/>
+                            <constraint firstItem="VyI-Cd-ezq" firstAttribute="leading" secondItem="5Ce-wQ-MJg" secondAttribute="leading" constant="36" id="0aW-kO-T1y"/>
                             <constraint firstItem="5Ce-wQ-MJg" firstAttribute="bottom" secondItem="K6e-8H-5Xh" secondAttribute="bottom" constant="57" id="3ik-ce-HOC"/>
-                            <constraint firstItem="pVT-Nu-glx" firstAttribute="leading" secondItem="5Ce-wQ-MJg" secondAttribute="leading" constant="36" id="AHv-QI-aAL"/>
-                            <constraint firstItem="VyI-Cd-ezq" firstAttribute="top" secondItem="pVT-Nu-glx" secondAttribute="bottom" constant="28.5" id="DL6-ek-vnx"/>
-                            <constraint firstItem="5Ce-wQ-MJg" firstAttribute="trailing" secondItem="pVT-Nu-glx" secondAttribute="trailing" constant="36" id="EJt-nd-c2S"/>
                             <constraint firstItem="K6e-8H-5Xh" firstAttribute="leading" secondItem="5Ce-wQ-MJg" secondAttribute="leading" constant="36" id="PoO-EE-vNb"/>
                             <constraint firstItem="K6e-8H-5Xh" firstAttribute="top" secondItem="VyI-Cd-ezq" secondAttribute="bottom" constant="10" id="QO2-b4-Bw5"/>
                             <constraint firstItem="VyI-Cd-ezq" firstAttribute="leading" secondItem="5Ce-wQ-MJg" secondAttribute="leading" constant="36" id="QaI-yR-BUI"/>
+                            <constraint firstItem="VyI-Cd-ezq" firstAttribute="top" secondItem="5Ce-wQ-MJg" secondAttribute="top" constant="18" id="Spe-41-oD1"/>
                             <constraint firstItem="5Ce-wQ-MJg" firstAttribute="trailing" secondItem="K6e-8H-5Xh" secondAttribute="trailing" constant="36" id="eZa-IC-ID9"/>
                             <constraint firstItem="5Ce-wQ-MJg" firstAttribute="trailing" secondItem="VyI-Cd-ezq" secondAttribute="trailing" constant="36" id="upU-mn-cBa"/>
+                            <constraint firstItem="5Ce-wQ-MJg" firstAttribute="trailing" secondItem="VyI-Cd-ezq" secondAttribute="trailing" constant="36" id="xpx-5s-5NZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5Ce-wQ-MJg"/>
                     </view>
@@ -222,69 +205,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="6bc-uh-dvc">
-                                <rect key="frame" x="20" y="97" width="364" height="428"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGJ-3y-Htc">
-                                        <rect key="frame" x="11" y="0.0" width="342" height="39"/>
-                                        <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="342" id="9Sb-AX-dGq"/>
-                                            <constraint firstAttribute="height" constant="39" id="qtV-hL-Ghl"/>
-                                        </constraints>
-                                        <attributedString key="attributedText">
-                                            <fragment content="MCH Movies">
-                                                <attributes>
-                                                    <color key="NSColor" red="1" green="0.0069375394172468408" blue="0.081287042612919636" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" size="24" name="Noteworthy-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll to select movie to delete..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUW-fO-cDd">
-                                        <rect key="frame" x="11" y="87" width="342" height="41"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="41" id="Tye-aY-a2B"/>
-                                            <constraint firstAttribute="width" constant="342" id="jp8-JR-UpS"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ovp-p1-Rnp">
-                                        <rect key="frame" x="0.0" y="176" width="364" height="155"/>
-                                        <color key="backgroundColor" red="0.95354956388473511" green="0.81153225898742676" blue="0.90651267766952515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="155" id="Yvr-UO-1Mb"/>
-                                            <constraint firstAttribute="width" constant="364" id="oMY-td-coP"/>
-                                        </constraints>
-                                    </pickerView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4K-AV-eDW">
-                                        <rect key="frame" x="117" y="379" width="130" height="49"/>
-                                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="130" id="JG1-3G-HY9"/>
-                                            <constraint firstAttribute="height" constant="49" id="Nda-Ri-zqK"/>
-                                        </constraints>
-                                        <state key="normal" title="Delete My Movie"/>
-                                        <connections>
-                                            <action selector="deleteMyMoviePressed:" destination="yOX-Qd-Rl6" eventType="touchUpInside" id="NIE-Ef-Bt5"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scroll to select movie to delete..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUW-fO-cDd">
+                                <rect key="frame" x="36" y="109" width="342" height="41"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="428" id="3Hp-J6-gOz"/>
-                                    <constraint firstAttribute="width" constant="364" id="i3j-df-GYf"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="41" id="Cs1-z4-Fih"/>
+                                    <constraint firstAttribute="height" constant="41" id="Tye-aY-a2B"/>
+                                    <constraint firstAttribute="width" constant="342" id="jp8-JR-UpS"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="342" id="ufE-6b-5AT"/>
                                 </constraints>
-                            </stackView>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4K-AV-eDW">
+                                <rect key="frame" x="137" y="463" width="130" height="49"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="49" id="38H-6w-vR3"/>
+                                    <constraint firstAttribute="width" constant="130" id="JG1-3G-HY9"/>
+                                    <constraint firstAttribute="height" constant="49" id="Nda-Ri-zqK"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="rcI-EW-Rlp"/>
+                                </constraints>
+                                <state key="normal" title="Delete My Movie"/>
+                                <connections>
+                                    <action selector="deleteMyMoviePressed:" destination="yOX-Qd-Rl6" eventType="touchUpInside" id="NIE-Ef-Bt5"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ovp-p1-Rnp">
+                                <rect key="frame" x="25" y="158" width="364" height="155"/>
+                                <color key="backgroundColor" red="0.95354956388473511" green="0.81153225898742676" blue="0.90651267766952515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="155" id="Coo-In-Ig9"/>
+                                    <constraint firstAttribute="height" constant="155" id="Yvr-UO-1Mb"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="364" id="b9y-tN-BoA"/>
+                                    <constraint firstAttribute="width" constant="364" id="oMY-td-coP"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.8804865236455951" green="0.92722022338914478" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="6bc-uh-dvc" firstAttribute="leading" secondItem="u2L-ed-5Sm" secondAttribute="leading" constant="20" id="DSH-Vd-N0N"/>
-                            <constraint firstItem="6bc-uh-dvc" firstAttribute="top" secondItem="u2L-ed-5Sm" secondAttribute="top" constant="9" id="ajH-fq-Y1k"/>
-                            <constraint firstItem="u2L-ed-5Sm" firstAttribute="trailing" secondItem="6bc-uh-dvc" secondAttribute="trailing" constant="30" id="h4M-Lw-VCg"/>
+                            <constraint firstItem="u2L-ed-5Sm" firstAttribute="trailing" secondItem="SUW-fO-cDd" secondAttribute="trailing" constant="36" id="3Jh-nf-HQG"/>
+                            <constraint firstItem="b4K-AV-eDW" firstAttribute="top" secondItem="Ovp-p1-Rnp" secondAttribute="bottom" constant="150" id="3La-EV-r2i"/>
+                            <constraint firstItem="b4K-AV-eDW" firstAttribute="leading" secondItem="u2L-ed-5Sm" secondAttribute="leading" constant="137" id="B9S-Ew-a4C"/>
+                            <constraint firstItem="Ovp-p1-Rnp" firstAttribute="top" secondItem="SUW-fO-cDd" secondAttribute="bottom" constant="8" id="EPb-WS-5wq"/>
+                            <constraint firstItem="Ovp-p1-Rnp" firstAttribute="leading" secondItem="u2L-ed-5Sm" secondAttribute="leading" constant="25" id="QD3-gN-vxa"/>
+                            <constraint firstItem="u2L-ed-5Sm" firstAttribute="trailing" secondItem="Ovp-p1-Rnp" secondAttribute="trailing" constant="25" id="TGx-Xv-CQw"/>
+                            <constraint firstItem="SUW-fO-cDd" firstAttribute="top" secondItem="u2L-ed-5Sm" secondAttribute="top" constant="21" id="TT2-Aq-pQh"/>
+                            <constraint firstItem="SUW-fO-cDd" firstAttribute="leading" secondItem="u2L-ed-5Sm" secondAttribute="leading" constant="36" id="iwR-fd-hu0"/>
+                            <constraint firstItem="u2L-ed-5Sm" firstAttribute="trailing" secondItem="b4K-AV-eDW" secondAttribute="trailing" constant="147" id="sMB-Jb-NzR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="u2L-ed-5Sm"/>
                     </view>
@@ -368,32 +336,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="69r-0Y-pMw">
-                                <rect key="frame" x="36" y="109" width="342" height="531"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="gGK-3V-pw4">
+                                <rect key="frame" x="36" y="118" width="342" height="447"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVh-dr-J0Q">
-                                        <rect key="frame" x="0.0" y="0.0" width="342" height="39"/>
-                                        <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="39" id="g4a-I7-Tsp"/>
-                                            <constraint firstAttribute="width" constant="342" id="n6t-gM-6Eh"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="39" id="uxS-Wy-C0q"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="342" id="z6l-yO-igD"/>
-                                            <constraint firstAttribute="height" constant="39" id="zZ8-lS-7HV"/>
-                                        </constraints>
-                                        <attributedString key="attributedText">
-                                            <fragment content="MCH Movies">
-                                                <attributes>
-                                                    <color key="NSColor" red="1" green="0.0069375394172468408" blue="0.081287042612919636" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <font key="NSFont" size="24" name="Noteworthy-Bold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popcornpic1sm2.png" translatesAutoresizingMaskIntoConstraints="NO" id="hLK-Ge-qFI">
-                                        <rect key="frame" x="16" y="84" width="310" height="190"/>
+                                        <rect key="frame" x="16" y="0.0" width="310" height="190"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="190" id="0rt-Hi-tG3"/>
                                             <constraint firstAttribute="width" constant="310" id="KeX-5f-HtN"/>
@@ -402,7 +349,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Must enter whole words - not partial ...and no extra spaces)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yde-eA-xBo">
-                                        <rect key="frame" x="0.0" y="319" width="342" height="53"/>
+                                        <rect key="frame" x="0.0" y="235" width="342" height="53"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="53" id="96U-ji-VF5"/>
                                             <constraint firstAttribute="width" constant="342" id="R9K-an-0Lk"/>
@@ -412,7 +359,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter movie name to search..." textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="SpW-mf-mmc">
-                                        <rect key="frame" x="0.0" y="417" width="342" height="34"/>
+                                        <rect key="frame" x="0.0" y="333" width="342" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="ChI-8j-7Nf"/>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="34" id="Pe6-GN-SeZ"/>
@@ -424,7 +371,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEf-5p-MqD">
-                                        <rect key="frame" x="134.5" y="496" width="73" height="35"/>
+                                        <rect key="frame" x="134.5" y="412" width="73" height="35"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="73" id="ICu-Cq-Ikx"/>
@@ -439,16 +386,15 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="342" id="GlZ-E5-ltk"/>
-                                    <constraint firstAttribute="height" constant="531" id="LXO-8f-IlG"/>
+                                    <constraint firstAttribute="height" constant="447" id="SlH-4J-h94"/>
+                                    <constraint firstAttribute="width" constant="342" id="Zx5-gw-kJw"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.9341523679650956" blue="0.87087865733849623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="69r-0Y-pMw" secondAttribute="trailing" constant="36" id="B6x-Z4-s4L"/>
-                            <constraint firstItem="69r-0Y-pMw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="Cdx-pf-7Tm"/>
-                            <constraint firstItem="69r-0Y-pMw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="21" id="KxG-fL-wTD"/>
+                            <constraint firstItem="gGK-3V-pw4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="que-Tq-asv"/>
+                            <constraint firstItem="gGK-3V-pw4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="yYZ-9d-U3d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
