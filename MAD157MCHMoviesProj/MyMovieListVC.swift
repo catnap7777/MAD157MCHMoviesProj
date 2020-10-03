@@ -11,6 +11,8 @@ import UIKit
 class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var myMoviesTableViewObj: UITableView!
+    
+    let defaultImageArray = ["posternf.png","pearl.jpg","gitcat.jpg"]
    
     var mymovies = [
         PlistStuff2.MyMovie(name: "", year: "", type: "", imdb: "", poster: "")
@@ -93,8 +95,41 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
                 
             cell.myMovieName?.text = mmRow.name
             cell.myMovieYear?.text = mmRow.year
+            cell.myMovieType?.text = mmRow.type
             
-            return cell
+//.. if using a dictionary instead
+//        var key = Array(self.movieDictionary8.keys)[indexPath.row]
+//        var value = Array(self.movieDictionary8.values)[indexPath.row]
+//        cell.mainText?.text = key
+//        cell.subText?.text = value.mYear
+//        let url = value.mPoster
+        
+        let url = mmRow.poster
+        var myImage = UIImage(named: defaultImageArray[0])
+        
+        if url == "" {
+            myImage = UIImage(named: defaultImageArray[0])
+        } else {
+            let imageURL = URL(string: url)
+            if let imageData = try? Data(contentsOf: imageURL!) {
+               
+                myImage = UIImage(data: imageData)
+                //print(myImage)
+                DispatchQueue.main.async {
+                    return myImage
+                }
+            } else {
+                //myImage = UIImage(named: defaultImageArray[0])
+                myImage = UIImage(named: "posternotfound.JPG")
+            }
+        }
+     
+        //.. this is referenced in TableViewCell.swift; if you just use cell.imageView?.image (commented out line below), the pictures just "default" to whatever size they come in as
+        cell.myMovieImage.image = myImage
+        //cell.imageView?.image = myImage
+       
+        return cell
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
