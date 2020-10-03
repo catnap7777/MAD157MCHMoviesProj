@@ -29,6 +29,7 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         movieTable.delegate = self
         
         finalName = finalName.uppercased()
+        
         labelName.text = "\"" + finalName + "\"" + " Movies"
         
         //..tableView.rowHeight = 40
@@ -153,10 +154,11 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
 //
 //        }
 
-
-    //.. Controls the size of the cell...
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150.0
-    }
+//***** DO NOT DELETE THIS
+//    //.. Controls the size of the cell... not really needed here because of
+//    //..   movieTable.rowHeight = 145 in viewDidLoad
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 150.0
+//    }
     
 }
