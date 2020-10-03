@@ -16,10 +16,11 @@ class PlistStuff2 {
         var type: String
         var imdb: String
         var poster: String
+        var comments: String
     }
     
     var mymovies = [
-        MyMovie(name: "", year: "", type: "", imdb: "", poster: "")
+        MyMovie(name: "", year: "", type: "", imdb: "", poster: "", comments: "")
     ]
   
 //************************************************************************************

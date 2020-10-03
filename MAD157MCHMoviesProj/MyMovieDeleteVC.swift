@@ -19,12 +19,13 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     var myMovieTypeChosen: String = ""
     var myMovieYearChosen: String = ""
     var myMoviePosterChosen: String = ""
+    var myMovieComments: String = ""
     
     var pickerTypeIndex = 0
     var pickerLabel = UILabel()
     
     var mymovies = [
-        PlistStuff2.MyMovie(name: "", year: "", type: "", imdb: "", poster: "")
+        PlistStuff2.MyMovie(name: "", year: "", type: "", imdb: "", poster: "", comments: "")
     ]
 
     //.. instantiate plist class

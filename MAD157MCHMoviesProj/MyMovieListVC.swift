@@ -15,7 +15,7 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     let defaultImageArray = ["posternf.png","pearl.jpg","gitcat.jpg"]
    
     var mymovies = [
-        PlistStuff2.MyMovie(name: "", year: "", type: "", imdb: "", poster: "")
+        PlistStuff2.MyMovie(name: "", year: "", type: "", imdb: "", poster: "", comments: "")
     ]
 //    var mymoviesSorted = [
 //        PlistStuff2.MyMovie(name: "", year: "", type: "", imdb: "", poster: "")

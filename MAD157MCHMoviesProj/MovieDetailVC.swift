@@ -24,6 +24,7 @@ class MovieDetailVC: UIViewController {
     var movieType = ""
     var movieIMDB = ""
     var moviePoster = ""
+    var movieComments = ""
     
     let defaultImageArray = ["posternf.png"]
     
@@ -32,7 +33,7 @@ class MovieDetailVC: UIViewController {
     //var movieDictionary: [String : String] = [:]
     
     var mymovies = [
-        PlistStuff2.MyMovie(name: "", year: "", type: "", imdb: "", poster: "")
+        PlistStuff2.MyMovie(name: "", year: "", type: "", imdb: "", poster: "", comments: "")
     ]
     
     //.. instantiate plist class
@@ -99,7 +100,7 @@ class MovieDetailVC: UIViewController {
                 print("$$$ MovieDetailVC.. nope... did NOT save/update plist with 'new' movie... why not?")
             }
         
-        mymovies.append(PlistStuff2.MyMovie(name: movieTitle, year: movieYear, type: movieType, imdb: movieIMDB, poster: moviePoster))
+        mymovies.append(PlistStuff2.MyMovie(name: movieTitle, year: movieYear, type: movieType, imdb: movieIMDB, poster: moviePoster, comments: movieComments))
         
         //.. save the plist
         do {
