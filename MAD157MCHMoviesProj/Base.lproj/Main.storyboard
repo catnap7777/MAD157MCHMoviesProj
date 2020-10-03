@@ -31,18 +31,18 @@
                                 <rect key="frame" x="36" y="136.5" width="342" height="619.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell2" rowHeight="129" id="ydR-7P-M9K" customClass="MyMoviesTableViewCell" customModule="MAD157MCHMoviesProj" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="342" height="129"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell2" rowHeight="209" id="ydR-7P-M9K" customClass="MyMoviesTableViewCell" customModule="MAD157MCHMoviesProj" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="342" height="209"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ydR-7P-M9K" id="kDT-S9-a1J">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="129"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="209"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="srT-ih-hM8">
-                                                    <rect key="frame" x="1" y="13" width="109" height="101"/>
+                                                    <rect key="frame" x="1" y="13" width="109" height="181"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="hlh-3h-hbw">
-                                                            <rect key="frame" x="0.0" y="0.0" width="109" height="101"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="109" height="181"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
                                                     </subviews>
@@ -89,17 +89,37 @@
                                                         <constraint firstAttribute="width" constant="256" id="wb9-Da-K17"/>
                                                     </constraints>
                                                 </stackView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ECB-9e-pcf">
+                                                    <rect key="frame" x="135" y="133" width="201" height="68"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="201" id="989-Mf-68I"/>
+                                                        <constraint firstAttribute="height" constant="68" id="Jtj-ZB-M01"/>
+                                                    </constraints>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Enter comments?">
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.89482665061950684" green="0.054262325167655945" blue="0.8946806788444519" alpha="0.999267578125" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="18" name="SnellRoundhand-Bold"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="0OD-Qj-WH4" firstAttribute="leading" secondItem="srT-ih-hM8" secondAttribute="trailing" constant="25" id="HFs-Ng-8Yi"/>
                                                 <constraint firstAttribute="bottom" secondItem="srT-ih-hM8" secondAttribute="bottom" constant="15" id="LZR-eC-VSx"/>
                                                 <constraint firstItem="0OD-Qj-WH4" firstAttribute="top" secondItem="kDT-S9-a1J" secondAttribute="top" constant="3" id="MVc-C6-nvK"/>
+                                                <constraint firstItem="ECB-9e-pcf" firstAttribute="top" secondItem="0OD-Qj-WH4" secondAttribute="bottom" constant="4" id="Nod-e0-bRt"/>
                                                 <constraint firstItem="srT-ih-hM8" firstAttribute="leading" secondItem="kDT-S9-a1J" secondAttribute="leading" constant="1" id="Wzb-mq-RZw"/>
+                                                <constraint firstItem="ECB-9e-pcf" firstAttribute="leading" secondItem="srT-ih-hM8" secondAttribute="trailing" constant="25" id="eNN-nD-9eJ"/>
                                                 <constraint firstItem="srT-ih-hM8" firstAttribute="top" secondItem="kDT-S9-a1J" secondAttribute="top" constant="13" id="gUH-du-dFZ"/>
                                                 <constraint firstAttribute="trailing" secondItem="0OD-Qj-WH4" secondAttribute="trailing" id="uV5-JC-4Ib"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="myMovieComments" destination="ECB-9e-pcf" id="C5h-rF-3PX"/>
                                             <outlet property="myMovieImage" destination="hlh-3h-hbw" id="cLJ-e7-WSn"/>
                                             <outlet property="myMovieName" destination="W0M-AF-iqi" id="GEQ-lC-GqB"/>
                                             <outlet property="myMovieType" destination="Bvt-8y-qqd" id="1MX-1v-dG3"/>

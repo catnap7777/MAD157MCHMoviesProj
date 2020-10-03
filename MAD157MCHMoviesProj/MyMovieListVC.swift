@@ -28,6 +28,10 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //..tableView.rowHeight = 40
+        myMoviesTableViewObj.rowHeight = 200
+        myMoviesTableViewObj.separatorColor = UIColor.blue
 
         // Do any additional setup after loading the view.
        
@@ -96,6 +100,9 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             cell.myMovieName?.text = mmRow.name
             cell.myMovieYear?.text = mmRow.year
             cell.myMovieType?.text = mmRow.type
+            cell.myMovieComments?.text = mmRow.comments
+        
+        print("****************** myMovieComments = \(mmRow.comments)")
             
 //.. if using a dictionary instead
 //        var key = Array(self.movieDictionary8.keys)[indexPath.row]

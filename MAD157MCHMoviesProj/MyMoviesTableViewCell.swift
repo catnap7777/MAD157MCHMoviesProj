@@ -14,6 +14,7 @@ class MyMoviesTableViewCell: UITableViewCell {
     @IBOutlet var myMovieYear: UILabel!
     @IBOutlet var myMovieType: UILabel!
     @IBOutlet var myMovieImage: UIImageView!
+    @IBOutlet var myMovieComments: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
