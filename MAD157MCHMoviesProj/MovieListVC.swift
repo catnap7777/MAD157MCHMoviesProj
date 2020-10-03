@@ -30,7 +30,8 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         finalName = finalName.uppercased()
         
-        labelName.text = "\"" + finalName + "\"" + " Movies"
+        //labelName.text = "\"" + finalName + "\"" + " Movies"
+        labelName.text = "Results for: \"" + finalName + "\""
         
         //..tableView.rowHeight = 40
         movieTable.rowHeight = 145
@@ -81,7 +82,8 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
                     return myImage
                 }
             } else {
-                myImage = UIImage(named: defaultImageArray[0])
+                //myImage = UIImage(named: defaultImageArray[0])
+                myImage = UIImage(named: "posternotfound.JPG")
             }
         }
      

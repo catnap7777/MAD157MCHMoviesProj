@@ -54,8 +54,12 @@ class MovieDetailVC: UIViewController {
         //        let url = URL(string: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/12/11/naturo-monkey-selfie.jpg?w968h681")
         
         //.. value of which was already set from MovieListVC when row was clicked on and segue performed
+        //.. NOTE: If the movie is older, it may not have a movie poster.
+        //..  If it doesn't, the url will be blank or N/A
+        //..  In that case, set the self.detailImage.image = posternotfound.jpg
         let url = moviePoster
-        self.detailImage.image = UIImage(named: defaultImageArray[0])
+        //self.detailImage.image = UIImage(named: defaultImageArray[0])
+        self.detailImage.image = UIImage(named: "posternotfound.JPG")
         //.. takes the movie url from moviePoster and call func setImage to place picture on screen
         self.setImage(from: url)
         //  self.imgView.downloadImage(from: url!)

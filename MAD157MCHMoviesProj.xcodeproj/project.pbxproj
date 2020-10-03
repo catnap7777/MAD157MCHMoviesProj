@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A4FF0B32529064B0062417A /* posternotfound.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 3A4FF0B22529064B0062417A /* posternotfound.JPG */; };
 		3A50D9F8251E68B200403D4F /* MyMovieListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50D9F7251E68B200403D4F /* MyMovieListVC.swift */; };
 		3A50D9FC251E6A6700403D4F /* MyMoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50D9FB251E6A6700403D4F /* MyMoviesTableViewCell.swift */; };
 		3A50DA00251EA58200403D4F /* MyMovieDeleteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A50D9FF251EA58200403D4F /* MyMovieDeleteVC.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A4FF0B22529064B0062417A /* posternotfound.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = posternotfound.JPG; sourceTree = "<group>"; };
 		3A50D9F7251E68B200403D4F /* MyMovieListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMovieListVC.swift; sourceTree = "<group>"; };
 		3A50D9FB251E6A6700403D4F /* MyMoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMoviesTableViewCell.swift; sourceTree = "<group>"; };
 		3A50D9FF251EA58200403D4F /* MyMovieDeleteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMovieDeleteVC.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				3AA0CF17251BAAB400239261 /* posternf.jpg */,
 				3AA0CF19251BAAED00239261 /* pearl.jpg */,
 				3AA0CF1B251BAB2300239261 /* gitcat.jpg */,
+				3A4FF0B22529064B0062417A /* posternotfound.JPG */,
 				3AA0CEF6251AA50A00239261 /* LaunchScreen.storyboard */,
 				3A5C0FC825203AC9008E0AED /* PlistStuff2.swift */,
 				3AA0CEF9251AA50A00239261 /* Info.plist */,
@@ -187,6 +190,7 @@
 				3A845543251BE5FD0040877A /* popcorn2_wo_middle3.jpg in Resources */,
 				3AA0CEF5251AA50A00239261 /* Assets.xcassets in Resources */,
 				3AA0CEF3251AA50800239261 /* Main.storyboard in Resources */,
+				3A4FF0B32529064B0062417A /* posternotfound.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
