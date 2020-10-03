@@ -8,7 +8,11 @@
 
 import UIKit
 
+
+
 class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    
 
     @IBOutlet var movieTable: UITableView!
     @IBOutlet var labelName: UILabel!
@@ -35,6 +39,7 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         //..tableView.rowHeight = 40
         movieTable.rowHeight = 145
+        movieTable.separatorColor = UIColor.red
         
     }
     
@@ -162,5 +167,6 @@ class MovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return 150.0
 //    }
+    
     
 }
