@@ -417,20 +417,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hL-dZ-vXQ">
-                                <rect key="frame" x="20" y="98" width="374" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hL-dZ-vXQ">
+                                <rect key="frame" x="20" y="98" width="374" height="29"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="8Z6-3k-IaH"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="A1t-Uc-qL1"/>
-                                    <constraint firstAttribute="height" constant="43" id="EMM-vs-hrn"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="43" id="FEx-cp-UAf"/>
-                                </constraints>
-                                <attributedString key="attributedText"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="hi karen">
+                                        <attributes>
+                                            <color key="NSColor" red="0.06850539892911911" green="0.092849455773830414" blue="0.98445039987564087" alpha="0.99945068359375" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="18" name="Noteworthy-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rvZ-WE-m4s">
-                                <rect key="frame" x="20" y="179.5" width="374" height="631"/>
+                                <rect key="frame" x="20" y="165.5" width="374" height="631"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="631" id="Lar-0M-LJF"/>
@@ -514,7 +516,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click on movie to select..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sP7-fk-8ms">
-                                <rect key="frame" x="36" y="149" width="342" height="20.5"/>
+                                <rect key="frame" x="36" y="135" width="342" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="342" id="0bI-kX-kgx"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20.5" id="6fi-is-is3"/>
