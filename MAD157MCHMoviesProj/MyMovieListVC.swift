@@ -21,6 +21,10 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
 //        PlistStuff2.MyMovie(name: "", year: "", type: "", imdb: "", poster: "")
 //    ]
     
+    var myHeaderRow: [String] = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
+                                 "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W",
+                                "X", "Y", "Z"]
+    
     let cellID = "cellID"
     
     //.. instantiate plist class
@@ -192,5 +196,28 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
                 self.present(alert, animated: true , completion: nil)
         }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        //return petArray.count
+        let alpha = 26
+        return 26
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    
+        //return petArray[section][0]
+        let testvar = "A"
+        //return testVar
+        let label = UILabel()
+        //label.text = "*** sort of works ***"
+        label.text = myHeaderRow[section]
+        label.backgroundColor = UIColor.yellow
+        return label
+    }
+    
+    //.. using func tableView - viewForHeaderInSection instead (see above)
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return myHeaderRow[section]
+//    }
 
+    
 }
