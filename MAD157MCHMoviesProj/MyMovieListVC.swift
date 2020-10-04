@@ -15,7 +15,7 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     let defaultImageArray = ["posternf.png","pearl.jpg","gitcat.jpg"]
    
     var mymovies = [
-        PlistStuff2.MyMovie(name: "", year: "", type: "", imdb: "", poster: "")
+        PlistStuff2.MyMovie(name: "", year: "", type: "", imdb: "", poster: "", comments: "")
     ]
 //    var mymoviesSorted = [
 //        PlistStuff2.MyMovie(name: "", year: "", type: "", imdb: "", poster: "")
@@ -28,6 +28,10 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //..tableView.rowHeight = 40
+        myMoviesTableViewObj.rowHeight = 200
+        //myMoviesTableViewObj.separatorColor = UIColor.blue
 
         // Do any additional setup after loading the view.
        
@@ -93,9 +97,12 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
 //        let mmRow = mymoviesSorted[indexPath.row]
         let mmRow = mymovies[indexPath.row]
                 
-            cell.myMovieName?.text = mmRow.name
-            cell.myMovieYear?.text = mmRow.year
-            cell.myMovieType?.text = mmRow.type
+        cell.myMovieName?.text = mmRow.name
+        cell.myMovieYear?.text = mmRow.year
+        cell.myMovieType?.text = mmRow.type
+        cell.myMovieComments?.text = mmRow.comments
+        
+        print("****************** myMovieComments = \(mmRow.comments)")
             
 //.. if using a dictionary instead
 //        var key = Array(self.movieDictionary8.keys)[indexPath.row]
@@ -137,14 +144,18 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         
         //********* maybe use same type of code in MovieDetailVC
         var mmRowSelected = mymovies[indexPath.row]
-        let movieKeySelected = mmRowSelected.name
-        var movieValueSelected = mmRowSelected.year
+        let movieNameSelected = mmRowSelected.name
+        //var movieYearSelected = mmRowSelected.year
+        let movieCommentsSelected = mmRowSelected.comments
         
-        let alert = UIAlertController(title: "Your Choice", message: "\(movieKeySelected)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Your Choice", message: "\(movieNameSelected)", preferredStyle: .alert)
 
-       alert.addTextField(configurationHandler: {(textField) in                textField.placeholder = "Your Comments here..."
-           //textField.isSecureTextEntry = true
-       })
+//       alert.addTextField(configurationHandler: {(textField) in                textField.placeholder = "Your Comments here..."
+//           //textField.isSecureTextEntry = true
+//       })
+        alert.addTextField(configurationHandler: {(textField) in textField.placeholder = "Enter new comments here..."
+            //textField.isSecureTextEntry = true
+        })
 
         //.. defines Cancel button
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { action -> Void in
@@ -156,12 +167,14 @@ class MyMovieListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
                //.. called savedText, which represents the first text field (note the index value of 0) on the alert controller. If you add more than one text field to an alert controller, you’ll need to define additional constants to represent those other text fields
 
                 let savedText = alert.textFields![0] as UITextField
-                let savedText2: String  = savedText.text ?? ""
+        
+//                let savedText2: String  = savedText.text ?? ""
+//
+//                //.. save the year from the movie
+//                let savedYear = String(movieValueSelected.prefix(4))
             
-                //.. save the year from the movie
-                let savedYear = String(movieValueSelected.prefix(4))
-            
-                self.mymovies[indexPath.row].year = ("\(savedYear) - \(savedText2)")
+//                self.mymovies[indexPath.row].year = ("\(savedYear) - \(savedText2)")
+                self.mymovies[indexPath.row].comments = savedText.text ?? movieCommentsSelected
                 
                 //.. save the plist
                 do {

@@ -19,12 +19,13 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     var myMovieTypeChosen: String = ""
     var myMovieYearChosen: String = ""
     var myMoviePosterChosen: String = ""
+    var myMovieCommentsChosen: String = ""
     
     var pickerTypeIndex = 0
     var pickerLabel = UILabel()
     
     var mymovies = [
-        PlistStuff2.MyMovie(name: "", year: "", type: "", imdb: "", poster: "")
+        PlistStuff2.MyMovie(name: "", year: "", type: "", imdb: "", poster: "", comments: "")
     ]
 
     //.. instantiate plist class
@@ -63,6 +64,37 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         myMovieYearChosen = mymovies[0].year
         myMovieTypeChosen = mymovies[0].type
         myMovieIMDBChosen = mymovies[0].imdb
+        myMovieCommentsChosen = mymovies[0].comments
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+            mymovies.removeAll()
+            //.. try to load existing plist... if it doesn't exist, "save"/create it
+            do {
+                //.. try to load
+                let dictionaryPlistLoad1 = try myPlist.loadPropertyList()
+                mymovies = dictionaryPlistLoad1
+                
+                mymovies = mymovies.sorted { $0.name < $1.name }
+            
+                } catch {
+                        //.. if not loaded (ie. not found bc it's new), try to save a new one
+                        do {
+                            var dictionaryPlistInitSave = try myPlist.savePropertyList(mymovies)
+                            } catch {
+                                print("..tried to save a 'new' plist but it didn't work")
+                            }
+                        print(error)
+                        print(".. tried to load an existing plist but it didn't load or wasn't there")
+                }
+            
+            //.. this code is used to set initial values before pickers move
+            self.pickerLabel.text = self.mymovies[0].name
+            myMovieChosen = mymovies[0].name
+            myMovieYearChosen = mymovies[0].year
+            myMovieTypeChosen = mymovies[0].type
+            myMovieIMDBChosen = mymovies[0].imdb
+            myMovieCommentsChosen = mymovies[0].comments
     }
     
 //    override func viewDidAppear(_ animated: Bool) {
@@ -139,8 +171,9 @@ class MyMovieDeleteVC: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         self.myMovieYearChosen = self.mymovies[self.pickerTypeIndex].year
         self.myMovieTypeChosen = self.mymovies[self.pickerTypeIndex].type
         self.myMovieIMDBChosen = self.mymovies[self.pickerTypeIndex].imdb
+        self.myMovieCommentsChosen = self.mymovies[self.pickerTypeIndex].comments
         
-        let msg = "Are you sure you want to delete... \n- Movie: \(myMovieChosen) \n- Year:\(myMovieYearChosen) \n- Type:\(myMovieTypeChosen) \n- Imdb:\(myMovieIMDBChosen)???"
+        let msg = "Are you sure you want to delete... \n\n- Movie: \(myMovieChosen) \n\n- Year: \(myMovieYearChosen) \n- Type: \(myMovieTypeChosen) \n- Imdb: \(myMovieIMDBChosen) \n- Comments: \(myMovieCommentsChosen)\n???"
             
         let alert = UIAlertController(title: "Confirm", message: msg, preferredStyle: .alert)
             

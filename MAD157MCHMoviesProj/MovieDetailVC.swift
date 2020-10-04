@@ -15,6 +15,7 @@ class MovieDetailVC: UIViewController {
     @IBOutlet var typeLabel: UILabel!
     @IBOutlet var imdbLabel: UILabel!
     @IBOutlet var detailImage: UIImageView!
+    @IBOutlet var commentsText: UITextView!
     
     //.. used if calling function to set var/lable
     //var testString = "Test String"
@@ -24,6 +25,7 @@ class MovieDetailVC: UIViewController {
     var movieType = ""
     var movieIMDB = ""
     var moviePoster = ""
+    var movieComments = ""
     
     let defaultImageArray = ["posternf.png"]
     
@@ -32,7 +34,7 @@ class MovieDetailVC: UIViewController {
     //var movieDictionary: [String : String] = [:]
     
     var mymovies = [
-        PlistStuff2.MyMovie(name: "", year: "", type: "", imdb: "", poster: "")
+        PlistStuff2.MyMovie(name: "", year: "", type: "", imdb: "", poster: "", comments: "")
     ]
     
     //.. instantiate plist class
@@ -50,6 +52,8 @@ class MovieDetailVC: UIViewController {
         typeLabel.text = movieType
         imdbLabel.text = movieIMDB
         //posterLabel.text = moviePoster
+        
+    
                 
         //        let url = URL(string: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/12/11/naturo-monkey-selfie.jpg?w968h681")
         
@@ -99,7 +103,9 @@ class MovieDetailVC: UIViewController {
                 print("$$$ MovieDetailVC.. nope... did NOT save/update plist with 'new' movie... why not?")
             }
         
-        mymovies.append(PlistStuff2.MyMovie(name: movieTitle, year: movieYear, type: movieType, imdb: movieIMDB, poster: moviePoster))
+        movieComments = commentsText.text
+        
+        mymovies.append(PlistStuff2.MyMovie(name: movieTitle, year: movieYear, type: movieType, imdb: movieIMDB, poster: moviePoster, comments: movieComments))
         
         //.. save the plist
         do {
@@ -161,6 +167,11 @@ class MovieDetailVC: UIViewController {
 //            print(error)
 //            print("$$$ MovieDetailVC.. nope... did NOT save/update plist with 'new' movie... why not?")
 //        }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+         let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
+         return newText.count < 10
     }
           
     

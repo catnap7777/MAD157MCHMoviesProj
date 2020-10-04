@@ -15,7 +15,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "191"
-            endingLineNumber = "191">
+            endingLineNumber = "191"
+            landmarkName = "deleteMyMoviePressed(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -29,7 +31,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "194"
-            endingLineNumber = "194">
+            endingLineNumber = "194"
+            landmarkName = "deleteMyMoviePressed(_:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "B5C09E06-3847-4AE3-896F-C2E2DAD7B115 - 394c7f686b959126"
