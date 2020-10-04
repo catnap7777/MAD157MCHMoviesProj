@@ -14,10 +14,8 @@
             filePath = "MAD157MCHMoviesProj/MyMovieDeleteVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "deleteMyMoviePressed(_:)"
-            landmarkType = "7">
+            startingLineNumber = "191"
+            endingLineNumber = "191">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -30,10 +28,8 @@
             filePath = "MAD157MCHMoviesProj/MyMovieDeleteVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
-            landmarkName = "deleteMyMoviePressed(_:)"
-            landmarkType = "7">
+            startingLineNumber = "194"
+            endingLineNumber = "194">
             <Locations>
                <Location
                   uuid = "B5C09E06-3847-4AE3-896F-C2E2DAD7B115 - 394c7f686b959126"
@@ -78,8 +74,8 @@
             filePath = "MAD157MCHMoviesProj/MyMovieDeleteVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "deleteMyMoviePressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
