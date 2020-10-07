@@ -100,7 +100,7 @@ class MovieDetailVC: UIViewController {
             mymovies = try myPlist.loadPropertyList()
             } catch {
                 print(error)
-                print("$$$ MovieDetailVC.. nope... did NOT save/update plist with 'new' movie... why not?")
+                print("$$$ MovieDetailVC.. nope... did NOT load plist")
             }
         
         movieComments = commentsText.text
